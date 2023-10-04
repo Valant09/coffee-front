@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../services/user-service.service';
+import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 
 @Component({
@@ -7,20 +9,52 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements  OnInit {
-  username?: string;
-  password?: string;
 
+  todo:any;
 
-  constructor() { }
+  constructor(
+    private userServiceService:UserServiceService,
+    private router:Router
+  ) { }
   ngOnInit() {
+    console.log('LoginComponent initialized');
   }
-  onSubmit() {
-    if (this.username && this.password) {
-      const encryptedUsername = CryptoJS.AES.encrypt(this.username, 'secret key').toString();
-      const encryptedPassword = CryptoJS.AES.encrypt(this.password, 'secret key').toString();
-      console.log(encryptedUsername);
-      console.log(encryptedPassword);
-      // Send encryptedUsername and encryptedPassword to the server using HTTPS
+
+  login(username:string,password:string){
+    if(!username || !password){
+      alert('Ingrese los datos completos')
     }
+    else{
+      console.log({
+        username: username,
+        password: password 
+      });
+      
+      this.userServiceService.validateUser({
+        username: username,
+        password: password 
+      }).subscribe(res=>{
+        if(!res.token){
+          alert('El usuario no existe, intente de nuevo')
+        }else{
+          this.userServiceService.setToken(res.token)
+          console.log("home!!!")
+          // this.router.navigate(['home'])
+        }
+      })
+      //Borrar cuando se implemente la api
+      // this.router.navigate(['home'])
+    }
+    
   }
+  // onSubmit() {
+  //   if (this.username && this.password) {
+  //     const encryptedUsername = CryptoJS.AES.encrypt(this.username, 'secret key').toString();
+  //     const encryptedPassword = CryptoJS.AES.encrypt(this.password, 'secret key').toString();
+  //     console.log('Username: ' + this.username);
+  //     console.log(encryptedUsername);
+  //     console.log(encryptedPassword);
+  //     // Send encryptedUsername and encryptedPassword to the server using HTTPS
+  //   }
+  // }
 }
