@@ -10,7 +10,7 @@
       <form>
         <input #username type="text" id="username" class="fadeIn second" name="username" placeholder="username">
         <input #password type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In" (click)="login(username.value, password.value)">
+        <button type="button" class="btn btn-primary" (click)="login(username.value, password.value)">Iniciar sesión</button>
       </form>
 
 

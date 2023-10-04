@@ -1,11 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
+  private url = environment.url;
 
   constructor(
     private http:HttpClient
@@ -25,7 +27,8 @@ export class UserServiceService {
     let headers = new HttpHeaders({
       'content-type': 'application/json',
     })
-    return this.http.post<any>(body,{'headers':headers}); 
+    console.log(body)
+    return this.http.post(this.url, body,{'headers':headers}); 
   }
 }
 
