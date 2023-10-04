@@ -26,6 +26,16 @@ h2 {
     color: #cccccc;
 }
 
+h3 {
+  font-size: 12px; /* Cambia el tamaño según tu preferencia */
+  color: #1a330c; /* Cambia el color según tu preferencia */
+}
+
+.Create-count {
+  color: #3f8123; /* cambio de color para crear cuenta */
+}
+
+
 
 
 /* STRUCTURE */

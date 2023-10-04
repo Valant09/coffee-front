@@ -8,12 +8,15 @@
       </div>
       Login
       <form>
-        <input #usuario type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="usuario">
-        <input #contrasena type="text" id="contrasena" class="fadeIn third" name="login" placeholder="contrasena">
-        <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Iniciar sesión</button>
+        <input #usuario type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Your Username">
+        <input #contrasena type="text" id="contrasena" class="fadeIn third" name="login" placeholder="Your Password">
+        <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Sing In</button>
       </form>
-
-
+      <div>
+        <h3 [routerLink]="'/falta ruta de recuperara contraseña'">Forgot password</h3>
+        <h3>Don't have an account?</h3>
+        <h3 [ngClass]="'color-especifico'" [routerLink]="'/falta ruta de crear cuenta'">Create Account</h3>
+      </div>
     </div>
   </div>
 
