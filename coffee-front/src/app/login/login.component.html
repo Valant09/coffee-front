@@ -5,17 +5,18 @@
       <!-- Icon -->
       <div class="fadeIn first">
         <img src="assets\img\logo.png" id="icon" alt="User Icon" />
+
       </div>
-      Login
+      <h1>Login</h1>
       <form>
-        <input #usuario type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Your Username">
-        <input #contrasena type="text" id="contrasena" class="fadeIn third" name="login" placeholder="Your Password">
+        <input #usuario type="text" id="usuario" class="fadeIn second custom-text-color " name="usuario" placeholder="Your Username">
+        <input #contrasena type="password" id="contrasena" class="fadeIn third custom-text-color" name="login" placeholder="Your Password">
         <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Sing In</button>
       </form>
       <div>
         <h3 [routerLink]="'/falta ruta de recuperara contraseña'">Forgot password</h3>
         <h3>Don't have an account?</h3>
-        <h3 [ngClass]="'color-especifico'" [routerLink]="'/falta ruta de crear cuenta'">Create Account</h3>
+        <h3 [ngClass]="'Create-count'" [routerLink]="'/falta ruta de crear cuenta'">Create Account</h3>
       </div>
     </div>
   </div>

@@ -16,6 +16,12 @@ a {
     font-weight: 400;
 }
 
+h1 {
+  font-size:18px; /* Cambia el tamaño según tu preferencia */
+  color: #7f5d44;/* Cambia el color según tu preferencia */
+  font-family: "Poppins", sans-serif;
+}
+
 h2 {
     text-align: center;
     font-size: 16px;
@@ -35,6 +41,33 @@ h3 {
   color: #3f8123; /* cambio de color para crear cuenta */
 }
 
+/* Estilo base para el botón */
+.btn-primary {
+  background-color: #db8c52; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 15px 30px; /* Espaciado interno (ajusta según sea necesario) */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo cuando el cursor está sobre el botón */
+.btn-primary:hover {
+  background-color: #af510b; /* Cambia el color de fondo al pasar sobre el botón */
+}
+
+/* Estilo cuando el botón está presionado (activo) */
+.btn-primary:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño del botón al hacer clic */
+}
+
+/* Cambia el color del texto de los campos de entrada */
+.custom-text-color {
+  color: #fffefe; /* Cambia este valor al color que desees */
+}
+
+
 
 
 
@@ -49,14 +82,14 @@ h3 {
     min-height: 100%;
     padding: 20px;
 }
-
+/*contenedor de you username y your password*/
 #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
     padding: 30px;
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
     position: relative;
     padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
