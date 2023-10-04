@@ -6,14 +6,13 @@
       <div class="fadeIn first">
         <img src="assets\img\wel2.png" id="icon" alt="User Icon" />
       </div>
-  
-      <!-- Login Form -->
-      <!-- <form>
-        <input #nombre type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input #contrasena type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In" (click)="login(nombre.value, contrasena.value)">
-      </form> -->
-  
+      Login
+      <form>
+        <input #username type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+        <input #password type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="onSubmit()">
+      </form>
+        
   
     </div>
   </div>
