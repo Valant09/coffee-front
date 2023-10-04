@@ -22,45 +22,46 @@ export class LoginComponent implements  OnInit {
     console.log('LoginComponent initialized');
   }
 
-  login(username:string,password:string){
-    if(!username || !password){
+  login(usuario:string,contrasena:string){
+    if(!usuario || !contrasena){
       alert('Ingrese los datos completos')
     }
     else{
 
-      const encryptedUsername = CryptoJS.AES.encrypt(username, environment.secretKey).toString();
-      const encryptedPassword = CryptoJS.AES.encrypt(password, environment.secretKey).toString();
-      
+      const encryptedusuario = CryptoJS.AES.encrypt(usuario, environment.secretKey).toString();
+      const encryptedcontrasena = CryptoJS.AES.encrypt(contrasena, environment.secretKey).toString();
+
       console.log({
-        username: username,
-        password: password 
+        usuario: usuario,
+        contrasena: contrasena
       });
-      
+
       this.userServiceService.validateUser({
-        username: encryptedUsername,
-        password: encryptedPassword 
+        usuario: encryptedusuario,
+        contrasena: encryptedcontrasena
       }).subscribe(res=>{
         if(!res.token){
           alert('El usuario no existe, intente de nuevo')
         }else{
           this.userServiceService.setToken(res.token)
           console.log("home!!!")
+          console.log(res.token)
           // this.router.navigate(['home'])
         }
       })
       // Borrar cuando se implemente la api
       // this.router.navigate(['home'])
     }
-    
+
   }
   // onSubmit() {
-  //   if (this.username && this.password) {
-  //     const encryptedUsername = CryptoJS.AES.encrypt(this.username, 'secret key').toString();
-  //     const encryptedPassword = CryptoJS.AES.encrypt(this.password, 'secret key').toString();
-  //     console.log('Username: ' + this.username);
-  //     console.log(encryptedUsername);
-  //     console.log(encryptedPassword);
-  //     // Send encryptedUsername and encryptedPassword to the server using HTTPS
+  //   if (this.usuario && this.contrasena) {
+  //     const encryptedusuario = CryptoJS.AES.encrypt(this.usuario, 'secret key').toString();
+  //     const encryptedcontrasena = CryptoJS.AES.encrypt(this.contrasena, 'secret key').toString();
+  //     console.log('usuario: ' + this.usuario);
+  //     console.log(encryptedusuario);
+  //     console.log(encryptedcontrasena);
+  //     // Send encryptedusuario and encryptedcontrasena to the server using HTTPS
   //   }
   // }
 }
