@@ -11,5 +11,5 @@ export class Persona {
 
 }
 export class Credenciales {
-    constructor(public nombre_usuario: string, public contrasena_usuario: string) { }
+    constructor( public contrasena_usuario: string) { }
 }
