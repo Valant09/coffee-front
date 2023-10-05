@@ -23,6 +23,13 @@ export class UserServiceService {
     return localStorage.removeItem('token')
   }
 
+  public postRequest(body:any):Observable<any>{
+    let headers = new HttpHeaders({
+      'content-type': 'application/json',
+    })
+    return this.http.post<any>(this.url+'/users', body,{'headers':headers});
+  }
+  
   validateUser(body:any):Observable<any>{
     let headers = new HttpHeaders({
       'content-type': 'application/json',
