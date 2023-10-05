@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
     height: 100vh;
 }
 
@@ -17,9 +17,9 @@ a {
 }
 
 h1 {
-  font-size:18px; /* Cambia el tamaño según tu preferencia */
+  font-size:30px; /* Cambia el tamaño según tu preferencia */
   color: #7f5d44;/* Cambia el color según tu preferencia */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
 }
 
 h2 {
@@ -33,11 +33,13 @@ h2 {
 }
 
 h3 {
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 12px; /* Cambia el tamaño según tu preferencia */
   color: #1a330c; /* Cambia el color según tu preferencia */
 }
 
 .Create-count {
+  font-family: 'Cormorant Garamond', sans-serif;
   color: #3f8123; /* cambio de color para crear cuenta */
 }
 
@@ -64,7 +66,8 @@ h3 {
 
 /* Cambia el color del texto de los campos de entrada */
 .custom-text-color {
-  color: #fffefe; /* Cambia este valor al color que desees */
+  font-family: 'Cormorant Garamond', sans-serif;
+  color: #fffefee9; /* Cambia este valor al color que desees */
 }
 
 
