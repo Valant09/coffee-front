@@ -5,7 +5,8 @@ export class Persona {
         public documento_usuario: string,
         public correo_usuario: string,
         public tipo_documento: string,
-        public credenciales: Credenciales
+        public tipo_usuario: string,
+        public credenciales: Credenciales,
     ) { }
 
 
