@@ -20,9 +20,9 @@
         <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Sing In</button>
       </form>
       <div>
-        <h3 [routerLink]="'/falta ruta de recuperara contraseña'">Forgot password</h3>
+        <h3 [routerLink]="['/recuperar-contrasena']">Forgot password</h3>
         <h3>Don't have an account?</h3>
-        <h3 [ngClass]="'Create-count'" [routerLink]="'/falta ruta de crear cuenta'">Create Account</h3>
+        <h3 [ngClass]="'Create-count'" [routerLink]="['/crear-cuenta']">Create Account</h3>
       </div>
     </div>
   </div>

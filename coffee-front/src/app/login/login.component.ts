@@ -39,20 +39,26 @@ export class LoginComponent implements  OnInit {
       this.userServiceService.validateUser({
         usuario: encryptedusuario,
         contrasena: encryptedcontrasena
-      }).subscribe(res=>{
-        if(!res.token){
-          alert('El usuario no existe, intente de nuevo')
-        }else{
-          this.userServiceService.setToken(res.token)
-          console.log("home!!!")
-          console.log(res.token)
-          // this.router.navigate(['home'])
+      }).subscribe(
+        res => {
+          this.userServiceService.setToken(res.token);
+          console.log("home!!!");
+          console.log(res.token);
+          // this.router.navigate(['home']);
+        },
+        error => {
+          if (error.status === 400) {
+            console.log("Credenciales incorrectas");
+            alert('Credenciales incorrectas. Por favor, verifique su usuario y contraseña.');
+          } else {
+            console.error("Error en la solicitud:", error);
+            // Manejar otros posibles errores aquí
+          }
         }
-      })
-      // Borrar cuando se implemente la api
+      );
+      // Borrar cuando se implemente la API
       // this.router.navigate(['home'])
     }
-
   }
   // onSubmit() {
   //   if (this.usuario && this.contrasena) {
