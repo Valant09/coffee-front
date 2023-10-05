@@ -41,6 +41,7 @@ h3 {
 .Create-count {
   font-family: 'Cormorant Garamond', sans-serif;
   color: #3f8123; /* cambio de color para crear cuenta */
+  cursor: pointer;
 }
 
 /* Estilo base para el botón */
@@ -83,6 +84,7 @@ h3 {
     justify-content: center;
     width: 100%;
     min-height: 100%;
+    max-height: 100%;
     padding: 20px;
 }
 /*contenedor de you username y your password*/
