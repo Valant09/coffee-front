@@ -27,7 +27,7 @@ export class UserServiceService {
     let headers = new HttpHeaders({
       'content-type': 'application/json',
     })
-    return this.http.post<any>(this.url+'/users', body,{'headers':headers});
+    return this.http.post<any>(this.url+'/users/create', body,{'headers':headers});
   }
   
   validateUser(body:any):Observable<any>{

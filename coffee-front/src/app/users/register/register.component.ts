@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class RegisterComponent {
 
   res:any
-  model = new Persona('','','','','','C', { contrasena_usuario:''});
+  model = new Persona( '','',0 ,'','','C', { contrasena_usuario:''});
 
   constructor(private userService: UserServiceService) { }
 
