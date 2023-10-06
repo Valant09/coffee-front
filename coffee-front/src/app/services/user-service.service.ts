@@ -29,7 +29,7 @@ export class UserServiceService {
     })
     return this.http.post<any>(this.url+'/users/create', body,{'headers':headers});
   }
-  
+
   validateUser(body:any):Observable<any>{
     let headers = new HttpHeaders({
       'content-type': 'application/json',
