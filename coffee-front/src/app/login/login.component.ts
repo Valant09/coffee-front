@@ -60,14 +60,5 @@ export class LoginComponent implements  OnInit {
       // this.router.navigate(['home'])
     }
   }
-  // onSubmit() {
-  //   if (this.usuario && this.contrasena) {
-  //     const encryptedusuario = CryptoJS.AES.encrypt(this.usuario, 'secret key').toString();
-  //     const encryptedcontrasena = CryptoJS.AES.encrypt(this.contrasena, 'secret key').toString();
-  //     console.log('usuario: ' + this.usuario);
-  //     console.log(encryptedusuario);
-  //     console.log(encryptedcontrasena);
-  //     // Send encryptedusuario and encryptedcontrasena to the server using HTTPS
-  //   }
-  // }
+
 }
