@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavBarService } from './services/navigation-bar.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'coffee-front';
+
+
+  constructor(private navBarService: NavBarService) {}
+
+  get hideNavbar(): boolean {
+    return this.navBarService.getHideNavbar();
+  }
 }

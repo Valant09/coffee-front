@@ -3,6 +3,8 @@ import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 import { environment } from '../../environments/environment';
+import { AppComponent } from '../app.component';
+import { NavBarService } from '../services/navigation-bar.service';
 
 
 @Component({
@@ -12,12 +14,18 @@ import { environment } from '../../environments/environment';
 })
 export class LoginComponent implements  OnInit {
 
+  hideNavbar = false;
   todo:any;
-
   constructor(
     private userServiceService:UserServiceService,
-    private router:Router
-  ) { }
+    private router:Router,
+    private  navBarService: NavBarService
+
+  ) {
+    this.navBarService.setHideNavbar(this.hideNavbar);
+  }
+
+
   ngOnInit() {
     console.log('LoginComponent initialized');
   }
