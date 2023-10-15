@@ -17,7 +17,12 @@ body {
   padding: 10px;
   background: linear-gradient(135deg, #feffff, #f9f9f9);
 }
-
+.error {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+} 
 .container {
   max-width: 700px;
   width: 100%;
