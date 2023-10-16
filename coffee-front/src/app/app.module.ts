@@ -12,6 +12,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule,
   
   ],
   providers: [],
