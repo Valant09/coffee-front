@@ -11,16 +11,16 @@
         <img src="assets\img\logo.png" id="icon" alt="User Icon" />
 
       </div>
-      <h1>Iniciar Sesión</h1>
+      <h1>Login</h1>
       <form>
-        <input #usuario type="text" id="usuario" class="fadeIn second custom-text-color " name="usuario" placeholder="Nombre de usuario">
-        <input #contrasena type="password" id="contrasena" class="fadeIn third custom-text-color" name="login" placeholder="Contraseña">
-        <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Iniciar Sesión</button>
+        <input #usuario type="text" id="usuario" class="fadeIn second custom-text-color " name="usuario" placeholder="Your Username">
+        <input #contrasena type="password" id="contrasena" class="fadeIn third custom-text-color" name="login" placeholder="Your Password">
+        <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Sing In</button>
       </form>
       <div>
-        <h3 [ngClass]="'Create-count'" [routerLink]="['/recuperar-contrasena']">¿Olvidó su contraseña?</h3>
-        <h3>¿No tiene una cuenta?</h3>
-        <h3 [ngClass]="'Create-count'" [routerLink]="['/register']">Crear cuenta</h3>
+        <h3 [ngClass]="'Create-count'" [routerLink]="['/recuperar-contrasena']">Forgot password</h3>
+        <h3>Don't have an account?</h3>
+        <h3 [ngClass]="'Create-count'" [routerLink]="['/register']">Create Account</h3>
       </div>
     </div>
   </div>
