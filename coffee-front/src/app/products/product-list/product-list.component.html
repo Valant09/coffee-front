@@ -3,7 +3,7 @@
 </head>
 <body>
   
-  <mat-grid-list [cols]="getGridColsClass()" gutterSize="30px">
+  <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'30px'">>
       <mat-grid-tile *ngFor="let product of products" class="product-tile">
         <mat-card class="product-card"> 
           <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
