@@ -1,4 +1,16 @@
-.navbar {
-  max-width: 1000px; /* Cambia el valor según tu preferencia */
-  margin: 0 auto; /* Centra la barra de navegación en la página */
+.navbar-nav .nav-item {
+  margin-right: 100px; /* Ajusta el valor de margen según tu preferencia */
+}
+
+body {
+  font-family: 'Cormorant Garamond', sans-serif;
+    height: 100vh;
+}
+
+.nav-item.nav-link {
+  color: #a08673; /* Cambia el color a tu preferencia, aquí se utiliza un color naranja como ejemplo */
+}
+
+.nav-item.nav-link:hover {
+  color: #af510b; /* Cambia el color para el estado de 'hover' (cuando pasas el ratón sobre el enlace) */
 }

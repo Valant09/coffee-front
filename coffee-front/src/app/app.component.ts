@@ -8,7 +8,11 @@ import { NavBarService } from './services/navigation-bar.service';
 })
 export class AppComponent {
   title = 'coffee-front';
+  navbarOpen = false;
 
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
 
   constructor(private navBarService: NavBarService) {}
 
