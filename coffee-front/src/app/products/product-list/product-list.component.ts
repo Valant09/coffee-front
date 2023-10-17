@@ -10,7 +10,7 @@ export class ProductListComponent {
 
 
   products = [
-    { name: 'Producto 1', description: 'Descripción del producto 1', imageUrl: 'assets/img/bagCoffee1.jpg' },
+    { name: 'Producto 1', description: 'Descripción del producto 1',price:123000, imageUrl: 'assets/img/bagCoffee1.jpg' },
     { name: 'Producto 2', description: 'Descripción del producto 2', imageUrl: 'assets/img/bag2.jpg' },
     { name: 'Producto 3', description: 'Descripción del producto 3', imageUrl: 'assets/img/BAG3.avif' },
     { name: 'Producto 4', description: 'Descripción del producto 1', imageUrl: 'assets/img/bagCoffee1.jpg' },
