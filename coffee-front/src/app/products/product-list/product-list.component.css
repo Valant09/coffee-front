@@ -1,0 +1,43 @@
+
+  .product-tile {
+    /* width: 60px;
+    height: 70px; */
+    background-color: #ffffff; 
+    border-radius: 10px;
+  }
+  .product-card{
+
+    max-width: 250px; 
+    max-height: 350px; 
+    background-color: #f1efee; 
+  }
+  
+  .product-image {
+    max-width: 80%; /* La imagen se ajustará al ancho del mat-card */
+    max-height: 70%; /* Altura máxima para la imagen */
+    margin: auto; /* Centra la imagen */
+    margin-top: 10px; /* Espacio superior para la imagen */
+  }
+  .product-info {
+    padding: auto; /* Espacio interno para el contenido de texto */
+    height:   60%; /* Altura fija para el contenido de texto */
+    /* overflow: auto; Añade barras de desplazamiento si el contenido es demasiado largo */
+  
+    height: 100vh;
+  }
+  body {
+    font-family: 'Cormorant Garamond', sans-serif;
+      height: 100vh;
+  }
+  h3 {
+
+    font-size: 20px; /* Cambia el tamaño según tu preferencia */
+    color: #1a330c; /* Cambia el color según tu preferencia */
+    font-weight: 600;
+  }
+  p {
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 16px; /* Cambia el tamaño según tu preferencia */
+    color: #1a330c; /* Cambia el color según tu preferencia */
+    align-content: center;
+  }
