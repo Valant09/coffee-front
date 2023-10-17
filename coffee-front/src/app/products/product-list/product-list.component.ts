@@ -28,7 +28,7 @@ export class ProductListComponent {
   }
 
   ///Responsive INICIO
-  gridColsClass: number = 3; // Clase predeterminada
+  gridColsClass: number = 5; // Clase predeterminada
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.setGridColsClass();
@@ -38,11 +38,11 @@ export class ProductListComponent {
 
   setGridColsClass() {
     if (window.innerWidth >= 1200) {
-      this.gridColsClass = 3; // 3 columnas en pantallas grandes (>= 1200px)
+      this.gridColsClass = 5; // 3 columnas en pantallas grandes (>= 1200px)
     } else if (window.innerWidth >= 768) {
-      this.gridColsClass = 2; // 2 columnas en pantallas medianas (>= 768px)
+      this.gridColsClass = 4; // 2 columnas en pantallas medianas (>= 768px)
     } else {
-      this.gridColsClass = 1; // 1 columna en pantallas pequeñas
+      this.gridColsClass = 3; // 1 columna en pantallas pequeñas
     }
   }
 
