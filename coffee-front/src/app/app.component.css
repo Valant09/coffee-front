@@ -32,14 +32,14 @@ header .header-left nav ul {
 }
 nav ul li a {
   display: block;
-  color: #cfd9e0;
+  color: #c59b7e;
   font-size: 18px;
   padding: 5px 10px;
   transition: 0.2s;
 }
 nav ul li a:hover,
 nav ul li a.active {
-  color: #fff;
+  color: #84644c;
 }
 nav .login-signup {
   display: none;
