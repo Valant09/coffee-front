@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,29 +8,33 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 })
 export class ProductListComponent {
 
-
-  products = [
-    { name: 'Producto 1', description: 'Descripción del producto 1',price:123000, imageUrl: 'assets/img/bagCoffee1.jpg' },
-    { name: 'Producto 2', description: 'Descripción del producto 2', imageUrl: 'assets/img/bag2.jpg' },
-    { name: 'Producto 3', description: 'Descripción del producto 3', imageUrl: 'assets/img/BAG3.avif' },
-    { name: 'Producto 4', description: 'Descripción del producto 1', imageUrl: 'assets/img/bagCoffee1.jpg' },
-    { name: 'Producto 5', description: 'Descripción del producto 2', imageUrl: 'assets/img/bag2.jpg' },
-    { name: 'Producto 6', description: 'Descripción del producto 3', imageUrl: 'assets/img/BAG3.avif' },
-    // Agrega más productos según sea necesario
+  productos!: any[
   ];
 
+  constructor(private productosService: ProductosService) { }
 
+  getProductos() {
 
-///Responsive INICIO
-  gridColsClass :number = 3; // Clase predeterminada
+    this.productosService.getProductos().subscribe(data => {
+      this.productos = data;
+      console.log(this.productos);
+    });
+  }
+
+  ngOnInit() {
+
+    this.getProductos();
+    this.setGridColsClass(); // Configurar la clase inicial al cargar la página
+  }
+
+  ///Responsive INICIO
+  gridColsClass: number = 3; // Clase predeterminada
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.setGridColsClass();
   }
 
-  ngOnInit() {
-    this.setGridColsClass(); // Configurar la clase inicial al cargar la página
-  }
+
 
   setGridColsClass() {
     if (window.innerWidth >= 1200) {
