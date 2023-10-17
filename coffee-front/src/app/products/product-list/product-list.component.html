@@ -1,1 +1,24 @@
-<p>product-list works!</p>
+<html>
+  <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'30px'">>
+      <mat-grid-tile *ngFor="let product of products" class="product-tile">
+        <mat-card class="product-card"> 
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+          <mat-card-content class ="product-info">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price + "$" }}</p>
+            <p>{{ product.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+</body> 
+
+</html>
+
