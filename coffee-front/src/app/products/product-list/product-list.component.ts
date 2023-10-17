@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
