@@ -33,13 +33,14 @@ header .header-left nav ul {
 nav ul li a {
   display: block;
   color: #c59b7e;
-  font-size: 18px;
+  font-size: 20px;
   padding: 5px 10px;
   transition: 0.2s;
 }
 nav ul li a:hover,
 nav ul li a.active {
   color: #84644c;
+
 }
 nav .login-signup {
   display: none;
@@ -59,7 +60,12 @@ header .login-signup a {
   padding: 5px 12px;
   border-radius: 5px;
   margin-right: 10px;
+  transition: background-color 0.2s; /* Agrega una transición de color de fondo */
 }
+header .login-signup a:hover {
+  background: #af510b; /* Cambia el color de fondo al pasar el cursor */
+}
+
 header .header-right .hamburger {
   margin-left: 20px;
   cursor: pointer;

@@ -14,7 +14,7 @@ import { NavBarService } from '../services/navigation-bar.service';
 })
 export class LoginComponent implements  OnInit {
 
-  hideNavbar = false;
+  hideNavbar = true;
   todo:any;
   constructor(
     private userServiceService:UserServiceService,
