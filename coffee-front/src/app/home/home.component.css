@@ -1,0 +1,56 @@
+/* Estilos para el contenedor principal */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cuadro {
+  /*background-color: transparent;*/
+
+  background-color: rgba(175, 81, 11, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.imagen {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 20px;
+  width: 550px;
+  border: 2px solid darkgreen;
+}
+
+.search-bar input {
+ /* border: 2px solid darkgreen;*/
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  color: darkgreen;
+  width: 545px;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}

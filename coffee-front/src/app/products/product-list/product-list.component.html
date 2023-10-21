@@ -1,0 +1,24 @@
+<html>
+  <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'30px'">>
+      <mat-grid-tile *ngFor="let producto of productos" class="product-tile">
+        <mat-card class="product-card"> 
+          <img [src]="producto.pathimag" alt="{{ producto.name }}" class="product-image">
+          <mat-card-content class ="product-info">
+            <h3>{{ producto.nombre_producto }}</h3>
+            <p>{{ producto.valorLote + "$"}}</p>
+            <p>{{ producto.descripcion }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+</body> 
+
+</html>
+
