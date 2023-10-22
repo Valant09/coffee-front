@@ -27,5 +27,6 @@ export class ProductDetailsComponent {
 
   ngOnInit(): void {
     const productId = this.route.snapshot.paramMap.get('id');
+    console.log(productId);
   }
 }
