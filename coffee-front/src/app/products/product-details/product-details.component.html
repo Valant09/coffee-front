@@ -1,7 +1,5 @@
-<div>
-    <!-- <h3>{{ producto.nombre_producto }}</h3> -->
-    <!-- <img [src]="product.imageUrl" alt="{{ product.name }}" width="200"> -->
-    <!-- <p>{{ producto.description }}</p>
-    <p>Price: {{ product.price | currency }}</p> -->
-    <!-- Add more details here as needed -->
-</div>
+<div *ngIf="producto">
+    <h2>{{ producto.nombre_producto }}</h2>
+    <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
+    <p>{{ producto.descripcion }}</p>
+  </div>

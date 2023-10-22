@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,8 +14,18 @@ export class ProductosService {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
+  
     return this.http.get<any>(`${this.url}/products`, { headers: headers });
   }
+
+  getProducto(id: number): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    const params = new HttpParams().set('id', id);
+    return this.http.get<any>(`${this.url}/products/id`, { headers: headers, params: params });
+  }
+
   
 
   crearProducto(producto: any): Observable<any> {
