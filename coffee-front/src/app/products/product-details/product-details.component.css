@@ -1,0 +1,17 @@
+.product-container {
+    display: flex;
+}
+
+.product-image {
+    flex: 1; /* Toma el 50% del ancho */
+}
+
+.product-details {
+    flex: 1; /* Toma el 50% del ancho */
+    padding: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
