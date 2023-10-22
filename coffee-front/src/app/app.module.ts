@@ -13,6 +13,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+<<<<<<< Updated upstream
+=======
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -21,6 +27,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LoginComponent,
     RegisterComponent,
     ProductListComponent,
+<<<<<<< Updated upstream
+=======
+    SearchBarComponent,
+    HomeComponent,
+    ProductDetailsComponent,
+>>>>>>> Stashed changes
 
   ],
   imports: [

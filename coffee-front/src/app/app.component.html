@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <header>
         <div class="header-left" *ngIf="!hideNavbar">
@@ -35,7 +37,7 @@
         <div class="header-right" *ngIf="!hideNavbar">
             <div class="login-signup">
                 <a [routerLink]="['/login']">Iniciar sesión </a>
-                 <a href="">Carrito</a>
+                <a href="">Carrito</a>
             </div>
             <div class="hamburger">
                 <div></div>
@@ -47,11 +49,11 @@
     <script>
         hamburger = document.querySelector(".hamburger");
         nav = document.querySelector("nav");
-        hamburger.onclick = function() {
+        hamburger.onclick = function () {
             nav.classList.toggle("active");
         }
     </script>
 </body>
+
 </html>
 <router-outlet></router-outlet>
-

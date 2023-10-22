@@ -1,39 +1,42 @@
 
   .product-tile {
-    /* width: 60px;
-    height: 70px; */
+    max-width: 250px;
     background-color: #ffffff; 
     border-radius: 10px;
+    margin: 10px;
   }
   .product-card{
-
-    max-width: 200px; 
-    max-height: 250px; 
+    /* margin: 20px; */
+    max-width: 250px; 
+    height: 500px;
+    height: auto; 
     background-color: #f1efee; 
   }
   
   .product-image {
-    max-width: 150px; /* La imagen se ajustará al ancho del mat-card */
-    max-height: 100px; /* Altura máxima para la imagen */
-    margin: auto; /* Centra la imagen */
-    margin-top: 10px; /* Espacio superior para la imagen */
+    max-width: 250px;
+    margin-top: 10px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    
   }
   .product-info {
-    padding: auto; /* Espacio interno para el contenido de texto */
-    height:   60%; /* Altura fija para el contenido de texto */
-    /* overflow: auto; Añade barras de desplazamiento si el contenido es demasiado largo */
+
+    max-height: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   
-    height: 100vh;
   }
   body {
-    font-family: 'Cormorant Garamond', sans-serif;
-      height: 100vh;
+      font-family: 'Cormorant Garamond', sans-serif;
+      height: 95vh;
   }
   h3 {
-
-    font-size: 20px; /* Cambia el tamaño según tu preferencia */
+    font-family: 'Helvetica', sans-serif;
+    font-size: 24px; /* Cambia el tamaño según tu preferencia */
     color: #1a330c; /* Cambia el color según tu preferencia */
-    font-weight: 600;
+    font-weight: 400;
   }
   p {
     font-family: 'Cormorant Garamond', sans-serif;
@@ -41,3 +44,5 @@
     color: #1a330c; /* Cambia el color según tu preferencia */
     align-content: center;
   }
+
+  

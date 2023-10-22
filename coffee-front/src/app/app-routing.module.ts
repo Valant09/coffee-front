@@ -5,11 +5,19 @@ import { RegisterComponent } from './users/register/register.component';
 import { AppComponent } from './app.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
+<<<<<<< Updated upstream
+=======
+import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
+>>>>>>> Stashed changes
 
 
 const routes: Routes = [
+  { path: 'products', component: ProductListComponent },
+  { path: 'productos/:id', component: ProductDetailsComponent },
 
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  
   { path: 'recover-password', component: RecoverPasswordComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},

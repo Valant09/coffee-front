@@ -6,13 +6,13 @@
 </head>
 <body>
   
-  <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'30px'">>
+  <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'20px'">
       <mat-grid-tile *ngFor="let producto of productos" class="product-tile">
-        <mat-card class="product-card"> 
+        <mat-card class="product-card" (click)="goToDetails(producto.id)"> 
           <img [src]="producto.pathimag" alt="{{ producto.name }}" class="product-image">
           <mat-card-content class ="product-info">
-            <h3>{{ producto.nombre_producto }}</h3>
-            <p>{{ producto.valorLote + "$"}}</p>
+            <h3>{{ "$ " + producto.valorLote  }}</h3>
+            <p>{{ producto.nombre_producto}}</p>
             <p>{{ producto.descripcion }}</p>
           </mat-card-content>
         </mat-card>
