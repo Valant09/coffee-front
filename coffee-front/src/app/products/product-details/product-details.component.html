@@ -1,23 +1,44 @@
-<!-- <div *ngIf="producto">
-    <h2>{{ producto.nombre_producto }}</h2>
-    <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
-    <p>{{ producto.descripcion }}</p>
-  </div> -->
-
+<!--
   <!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-    <div div *ngIf="producto" class="product-container">
-        <div class="product-image">
-            <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
-        </div>
-        <div class="product-details">
-            <h3>{{producto.nombre_producto }}</h3>
-            <h3>{{ "$ " + producto.valorLote  }}</h3>
-            <p>{{ producto.descripcion }}</p>
-        </div>
+  <html>
+  <body class="body_conten">
+    <div *ngIf="producto" class="product-container">
+      <div class="product-image">
+        <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
+      </div>
+      <div class="product-details">
+        <h3>{{ producto.nombre_producto }}</h3>
+        <h3>{{ "$ " + producto.valorLote }}</h3>
+        <p>{{ producto.descripcion }}</p>
+        <button class="add-to-cart-button">Agregar al carrito</button>
+        <button class="checkout-button">Pagar ahora</button>
+      </div>
     </div>
-</body>
-</html>
+  </body>
+  </html>
+   -->
+   <!DOCTYPE html>
+   <html lang="es" class="fond">
+   <head>
+     <meta charset="UTF-8">
+     <title>Premium Kit Coffee Lover</title>
+   </head>
+   <body class="wrapper">
+     <div id="product-desc" class="product-container">
+       <div class="product-image">
+         <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
+       </div>
+       <div class="product-details">
+         <h1>{{ producto.nombre_producto }}</h1>
+         <p>{{ producto.descripcion }}</p>
+         <p class="price">{{ "$ " + producto.valorLote }}</p>
+         <p class="ml"></p>
+         <div class="actions">
+           <button class="add-to-cart">Agregar al carrito</button>
+         </div>
+       </div>
+     </div>
+   </body>
+   </html>
+
+
