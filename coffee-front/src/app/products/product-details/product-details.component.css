@@ -1,5 +1,9 @@
 .fond{
   background-color: rgb(237,237,237);
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', sans-serif;
+  height: 85vh;
+  align-items: center;
 
 }
 body {
@@ -11,38 +15,85 @@ body {
   align-items: center;
   height: 100vh;
 }
+.product-desc.product-container {
+  margin-top: 0; /* Establecer el margen superior a 0 para acercar el contenido al borde superior */
+}
+
 /* Estilos para el contenedor principal */
-.wrapper{
+.wrapper {
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
   width: 85%;
-  max-width: 1200px;
+  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-left: 120px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); /* Aplicar sombra en los cuatro lados */
+  margin-top: 20px;
+  height: 85vh;
 }
 #product-desc {
-  width: 600px;
+  width: 1150px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+
   display: flex;
+
+}
+.product-container{
+  display: flex;
+  justify-content: center;
   align-items: center;
+  margin-top: 0px;
+
+
 }
 
 .product-image {
+  width: 570px;
   padding: 20px;
   margin-right: 31px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  margin-left: 0px;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-details {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 80px;
+  padding-right: -300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin-top: 0px;
+  margin: 10px;
 }
+p {
 
+  font-size: 18px;
+  /* Cambia el tamaño según tu preferencia */
+  color: #1a330c;
+  /* Cambia el color según tu preferencia */
+  align-content: center;
+}
+.h3{
+  font-size: 50px;
+  /* Cambia el tamaño según tu preferencia */
+  color: #1a330c;
+  /* Cambia el color según tu preferencia */
+  align-content: center;
+}
 .product-details h1 {
   font-size: 24px;
   margin-top: 0;
@@ -53,7 +104,7 @@ body {
 }
 
 .product-details .price {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -65,6 +116,8 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding-top: 10px; /* Agrega relleno superior para separar el contenido del div */
+  padding-bottom: 10px; /* Agrega relleno inferior si es necesario */
 }
 
 .add-to-cart {
@@ -73,6 +126,7 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
 }
 
 

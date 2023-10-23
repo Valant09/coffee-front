@@ -21,7 +21,9 @@
    <html lang="es" class="fond">
    <head>
      <meta charset="UTF-8">
-     <title>Premium Kit Coffee Lover</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
    </head>
    <body class="wrapper">
      <div id="product-desc" class="product-container">
@@ -31,10 +33,11 @@
        <div class="product-details">
          <h1>{{ producto.nombre_producto }}</h1>
          <p>{{ producto.descripcion }}</p>
-         <p class="price">{{ "$ " + producto.valorLote }}</p>
-         <p class="ml"></p>
+         <h3 class="price">{{ "$ " + producto.valorLote.toLocaleString('es-ES') }}</h3>
+
          <div class="actions">
-           <button class="add-to-cart">Agregar al carrito</button>
+          <input type="number" id="numero" name="numero" min="0" max="100" step="1">
+          <button class="add-to-cart">Agregar al carrito</button>
          </div>
        </div>
      </div>
