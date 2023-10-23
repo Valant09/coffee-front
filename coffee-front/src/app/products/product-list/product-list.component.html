@@ -11,7 +11,7 @@
         <mat-card class="product-card" (click)="goToDetails(producto.id)"> 
           <img [src]="producto.pathimag" alt="{{ producto.name }}" class="product-image">
           <mat-card-content class ="product-info">
-            <h3>{{ "$ " + producto.valorLote  }}</h3>
+            <h3>{{ "$ " + producto.valorLote.toLocaleString('es-ES') }}</h3>
             <p>{{ producto.nombre_producto}}</p>
             <p>{{ producto.descripcion }}</p>
           </mat-card-content>
