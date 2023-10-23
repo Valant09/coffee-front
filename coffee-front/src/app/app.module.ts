@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
     RegisterComponent,
     ProductListComponent,
     ProductDetailsComponent,
+    HomeComponent,
 
   ],
   imports: [

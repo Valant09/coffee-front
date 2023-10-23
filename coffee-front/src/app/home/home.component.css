@@ -1,0 +1,54 @@
+/* Estilos para el contenedor principal */
+.wrapper{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: -108px;
+}
+
+.cuadro {
+  background-color: #ffffff;
+  margin-left: -150px;
+  text-align: center;
+  width: 80%;
+  margin: 100px auto 20px auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.imagen {
+  max-width: 100%; /* Establece un ancho máximo del 100% para la imagen */
+  height: auto; /* Mantiene la proporción de aspecto */
+}
+
+
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 20px;
+  width: 550px;
+  border: 2px solid darkgreen;
+}
+
+.search-bar input {
+  /* border: 2px solid darkgreen;*/
+   outline: none;
+   flex: 1;
+   padding: 5px;
+   border-radius: 20px;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+   color: darkgreen;
+   width: 545px;
+ }*/
+
+.search-bar input::placeholder {
+  color: #999;
+}
