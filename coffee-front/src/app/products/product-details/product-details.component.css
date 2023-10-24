@@ -1,0 +1,156 @@
+.fond{
+  background-color: rgb(237,237,237);
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', sans-serif;
+  height: 85vh;
+  align-items: center;
+
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.product-desc.product-container {
+  margin-top: 0; /* Establecer el margen superior a 0 para acercar el contenido al borde superior */
+}
+
+/* Estilos para el contenedor principal */
+.wrapper {
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 120px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); /* Aplicar sombra en los cuatro lados */
+  margin-top: 20px;
+  height: 85vh;
+}
+#product-desc {
+  width: 1150px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  display: flex;
+
+}
+.product-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+
+
+}
+
+.product-image {
+  width: 570px;
+  padding: 20px;
+  margin-right: 31px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  margin-left: 0px;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.product-details {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 80px;
+  padding-right: -300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin-top: 0px;
+  margin: 10px;
+}
+p {
+
+  font-size: 18px;
+  /* Cambia el tamaño según tu preferencia */
+  color: #1a330c;
+  /* Cambia el color según tu preferencia */
+  align-content: center;
+}
+.h3{
+  font-size: 50px;
+  /* Cambia el tamaño según tu preferencia */
+  color: #1a330c;
+  /* Cambia el color según tu preferencia */
+  align-content: center;
+}
+.product-details h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.product-details p {
+  margin-bottom: 10px;
+}
+
+.product-details .price {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.product-details .ml {
+  font-size: 14px;
+}
+
+.actions {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px; /* Agrega relleno superior para separar el contenido del div */
+  padding-bottom: 10px; /* Agrega relleno inferior si es necesario */
+}
+
+.add-to-cart {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+.cuantity{
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  -webkit-appearance: none; /* Elimina los botones de incremento y decremento en navegadores WebKit */
+  appearance: none;
+  margin: 0;
+  background-color: #f5f5f5; /* Cambia el color de fondo */
+  appearance: number-input;
+}
+
+.cuantity_g {
+  display: flex; /* Cambia la disposición a flex para alinear los elementos en una fila */
+  text-align: center; /* Centra el texto horizontalmente */
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px; /* Agrega relleno superior para separar el contenido del div */
+  padding-bottom: 10px; /* Agrega relleno inferior si es necesario */
+}
+
+
+
+
+

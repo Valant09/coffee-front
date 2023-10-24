@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+    <link rel="stylesheet" href="register.component.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Crear cuenta</div>
+        <div class="content">
+            <form [formGroup]="formularioPersona" (ngSubmit)="addPersona()" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="nombre_usuario">Nombres:</label>
+                        <input formControlName="nombre_usuario" class="form-control" id="nombre"
+                            placeholder="Ingrese sus nombres" />
+                        <div *ngIf="formularioPersona.get('nombre_usuario')!.hasError('required') && formularioPersona.get('nombre_usuario')!.touched" class="error">Nombre es requerido.</div>
+                        <div *ngIf="formularioPersona.get('nombre_usuario')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo letras y espacios.
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="apellido_usuario">Apellidos:</label>
+                        <input formControlName="apellido_usuario" class="form-control" id="apellido_usuario"
+                            placeholder="Ingrese sus apellidos" />
+                        <div *ngIf="formularioPersona.get('apellido_usuario')!.hasError('required') && formularioPersona.get('apellido_usuario')!.touched" class="error">Apellido es requerido.</div>
+                        <div *ngIf="formularioPersona.get('apellido_usuario')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo letras y espacios.
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="tipo_documento">Ingrese tipo de documento:</label>
+                        <select formControlName="tipo_documento" class="form-control" id="tipo_documento"
+                            style="height: 40px; width: 300px;">
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+                    <div *ngIf="formularioPersona.get('tipo_documento')!.hasError('required') && formularioPersona.get('tipo_documento')!.touched" class="error">Tipo de documento es requerido.</div>
+
+                    <div class="input-box">
+                        <label for="correo_usuario">Email:</label>
+                        <input formControlName="correo_usuario" class="form-control" id="correo_usuario"
+                            placeholder="Ingrese su email" />
+                        <div *ngIf="formularioPersona.get('correo_usuario')!.hasError('required') && formularioPersona.get('correo_usuario')!.touched" class="error">Email es requerido.</div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="documento_usuario">Documento de identidad:</label>
+                        <input formControlName="documento_usuario" class="form-control" id="documento_usuario"
+                            placeholder="Ingrese su documento" pattern="[0-9]*" min="0" />
+                        <div *ngIf="formularioPersona.get('documento_usuario')!.hasError('required') && formularioPersona.get('documento_usuario')!.touched" class="error">Documento es requerido y debe ser numérico.</div>
+                        <div *ngIf="formularioPersona.get('documento_usuario')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo numeros.
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="contrasena_usuario">Contraseña:</label>
+                        <input formControlName="contrasena_usuario" type="password" class="form-control"
+                            id="contrasena_usuario" placeholder="Ingrese su contraseña" />
+                        <div *ngIf="formularioPersona.get('contrasena_usuario')!.hasError('required') && formularioPersona.get('contrasena_usuario')!.touched" class="error">Contraseña es requerida.</div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="big-button" [disabled]="!formularioPersona.valid">Registrar</button>
+                <div *ngIf="formularioPersona.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
