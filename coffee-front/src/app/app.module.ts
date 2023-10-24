@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { HomeComponent } from './home/home.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HomeComponent } from './home/home.component';
     ProductListComponent,
     ProductDetailsComponent,
     HomeComponent,
+    SearchBarComponent,
 
   ],
   imports: [

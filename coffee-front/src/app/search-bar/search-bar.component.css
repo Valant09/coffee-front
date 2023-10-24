@@ -1,0 +1,27 @@
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 20px;
+  width: 550px;
+  border: 2px solid darkgreen;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  color: darkgreen;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+  background-color: #f0f0f0;
+}
