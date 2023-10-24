@@ -1,13 +1,5 @@
-.product-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: -8px;
-}
-
 /* Estilos para el contenedor principal */
-.wrapper{
+.wrapper {
   margin: 0 auto;
   width: 80%;
   max-width: 1200px;
@@ -19,10 +11,9 @@
 }
 
 .imagen {
-  max-width: 78%; /* Establece un ancho máximo del 100% para la imagen */
-  height: auto; /* Mantiene la proporción de aspecto */
+  max-width: 78%;
+  height: auto;
 }
-
 
 .search-bar {
   position: absolute;
@@ -34,19 +25,107 @@
   border-radius: 20px;
   width: 550px;
   border: 2px solid darkgreen;
+  display: flex;
 }
 
 .search-bar input {
-  /* border: 2px solid darkgreen;*/
-   outline: none;
-   flex: 1;
-   padding: 5px;
-   border-radius: 20px;
-   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-   color: darkgreen;
-   width: 545px;
- }*/
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  color: darkgreen;
+}
 
 .search-bar input::placeholder {
   color: #999;
+  background-color: #f0f0f0;
+}
+
+.search-bar::before {
+  content: "\1F50D";
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-right: 1px;
+}
+
+.search-bar::before {
+  content: "\1F50D";
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-right: 10px;
+}
+/* Estilos para el pie de página */
+.footer {
+  background-color: #3f8123;
+  color: #000 !important;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 0 0 calc(25% - 20px);
+  margin-right: 20px;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+
+&:hover {
+   text-decoration: underline !important;
+ }
+}
+}
+
+/* Estilos para el enlace "APRENDE MÁS" */
+ul li:nth-last-child(2) a {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #000 !important;
+}
+
+
+.footer-section:nth-child(3) a {
+  color: #000 !important;
+}
+
+
+.footer-section:nth-child(4) a {
+  color: #000 !important;
+}
+
+.footer-section:nth-child(2) a {
+  color: #000 !important;
+}
+.rights {
+  text-align: center;
+  font-size: 0.9em;
+  color: #000;
+  margin-top: 20px;
 }

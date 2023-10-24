@@ -6,10 +6,40 @@
   <div class="cuadro">
     <img src="assets/img/fondo.jpeg" class="imagen">
     <div class="search-bar">
-      <div class="search-bar">
-        <input type="text" #searchInput (input)="onSearch(searchInput.value)" placeholder="Buscar..." />
-      </div>
+      <input type="text" #searchInput (input)="onSearch(searchInput.value)" placeholder="Buscar..." />
     </div>
   </div>
 </div>
-
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p class="contact-info">Correo electrónico: CoffeCabana@ecommerce.com</p>
+      <p class="contact-info">Teléfono: +.....</p>
+    </div>
+    <div class="footer-section">
+      <h4>APRENDE MÁS</h4>
+      <ul>
+        <li><a href="#">Hecho en Colombia</a></li>
+        <li><a href="#">Déjanos tu comentario</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Coffe Cabana</h4>
+      <ul>
+        <li><a routerLink="/productos">Productos</a></li>
+        <li><a routerLink="/mi-carrito">Mi Carrito</a></li>
+        <li><a routerLink="/contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Redes Sociales</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="rights">© 2023 Todos los derechos reservados.</p>
+</footer>

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd7207a2-5cac-4bf8-8ebe-4a8157e8d056" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/coffee-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coffee-front/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/home/home.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2XC8xLV0sdP0idOeblBdSIb7D1g" />
   <component name="ProjectViewState">
@@ -25,12 +29,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/usuario/Documents/GitHub/coffee-front",
+    "last_opened_file_path": "C:/Users/usuario/Downloads/coffee-front-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\usuario\\Documents\\GitHub\\coffee-front\\coffee-front\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,6 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698121946082</updated>
       <workItem from="1698121947232" duration="925000" />
+      <workItem from="1698122900680" duration="855000" />
     </task>
     <servers />
   </component>
