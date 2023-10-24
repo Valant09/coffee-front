@@ -1,5 +1,5 @@
 .product-tile:hover {
-  max-width: 250px;
+  width: 250px;
   background-color: #f5f2f2;
   border-radius: 10px;
   margin: 10px;
@@ -8,7 +8,7 @@
 
 .product-card {
   /* margin: 20px; */
-  max-width: 250px;
+  width: 250px;
   height: 500px;
   height: auto;
   background-color: #f1efee;
@@ -17,7 +17,9 @@
 }
 
 .product-image {
-  max-width: 250px;
+
+  max-width: auto;
+  max-height: 154px;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -25,7 +27,7 @@
 }
 
 .product-info {
-
+  
   max-height: 200px;
   overflow: hidden;
   border-top: 1px solid #ccc;

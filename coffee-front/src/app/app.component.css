@@ -52,6 +52,7 @@ header .header-right {
 header .login-signup {
   color: #cfd9e0;
   font-weight: bold;
+  
 }
 header .login-signup a {
   display: inline-block;
