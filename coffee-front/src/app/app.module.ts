@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { HomeComponent } from './home/home.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CarComponent } from './car/car.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     ProductDetailsComponent,
     HomeComponent,
     SearchBarComponent,
+    CarComponent,
 
   ],
   imports: [

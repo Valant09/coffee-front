@@ -7,12 +7,13 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import {CarComponent} from "./car/car.component";
 
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'productos/:id', component: ProductDetailsComponent },
-
+  {path: 'car', component: CarComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'recover-password', component: RecoverPasswordComponent},

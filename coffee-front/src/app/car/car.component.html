@@ -1,0 +1,23 @@
+<div class="cart">
+  <h2>Carrito de Compras</h2>
+
+  <ul>
+    <!-- Lista de productos en el carrito -->
+    <li *ngFor="let product of cartItems">
+      <div class="product">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <div class="product-details">
+          <h3>{{ product.name }}</h3>
+          <p>Precio: {{ product.price | currency }}</p>
+        </div>
+        <button (click)="removeItem(product)">Eliminar</button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Total del carrito -->
+  <div class="total">
+    Total: {{ calculateTotal() | currency }}
+  </div>
+</div>
+
