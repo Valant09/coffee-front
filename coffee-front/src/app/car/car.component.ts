@@ -6,19 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent {
-  cartItems: any[] = [
-    // Ejemplo de productos en el carrito
-    { name: 'Producto 1', price: 10.99, image: 'product1.jpg' },
-    { name: 'Producto 2', price: 15.99, image: 'product2.jpg' },
-    { name: 'Producto 3', price: 7.99, image: 'product3.jpg' }
+  cartItems: { product: { name: string; price: number; image: string }; quantity: number }[] = [
+    { product: { name: 'Producto 1', price: 10.99, image: 'product1.jpg' }, quantity: 1 },
+    { product: { name: 'Producto 2', price: 15.99, image: 'product2.jpg' }, quantity: 2 },
+    { product: { name: 'Producto 3', price: 7.99, image: 'product3.jpg' }, quantity: 1 }
   ];
 
-  // Define la función calculateTotal dentro de la clase
   calculateTotal(): number {
-    return this.cartItems.reduce((total, product) => total + product.price, 0);
+    return this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
   }
 
-  removeItem(product: any): void {
-    // Lógica para eliminar un producto del carrito
+  decreaseQuantity(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
+    if (item.quantity > 1) {
+      item.quantity--;
+    }
+  }
+
+  increaseQuantity(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
+    item.quantity++;
+  }
+
+  removeItem(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
+    const index = this.cartItems.indexOf(item);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+    }
   }
 }
