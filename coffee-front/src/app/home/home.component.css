@@ -14,11 +14,11 @@
 }
 #slider {
   margin: 0 auto;
-  width: 1505px;
+  width: 1550px;
   max-width: 100%;
   text-align: center;
-  margin-top: 15px;
-  margin-left: 5px;
+  margin-top: 0px;
+  margin-left: -1px;
   height: 600;
 }
 #slider input[type=radio] {
@@ -162,6 +162,21 @@
   height: 100%;
   object-fit: cover;
 }
+.barra_superior{
+  margin-top: 15px;
+  background: #a66e66;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+}
+
+a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
 
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter, Output} from '@angular/core';
 import { NavBarService } from './services/navigation-bar.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { NavBarService } from './services/navigation-bar.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
   title = 'coffee-front';
   navbarOpen = false;
 
@@ -18,5 +19,8 @@ export class AppComponent {
 
   get hideNavbar(): boolean {
     return this.navBarService.getHideNavbar();
+  }
+  onSearch(searchTerm: string) {
+    this.search.emit(searchTerm);
   }
 }

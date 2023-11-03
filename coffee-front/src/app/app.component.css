@@ -8,7 +8,28 @@
 }
 img {
   width: 100%;
+  margin-top: 5px;
 }
+.barra_buscador{
+
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.barra_buscador input[type="text"] {
+  width: 48%; /* Ajusta el valor del ancho según sea necesario */
+  border: none; /* Elimina todos los bordes */
+  border-bottom: 2px solid #a66e66; /* Establece el borde inferior con el color especificado */
+  outline: none; /* Elimina el contorno cuando el campo de entrada está enfocado */
+  font-family: "ubuntu";
+}
+
 header {
   height: 70px;
   display: flex;
@@ -18,13 +39,16 @@ header {
   background: #ffffff;
 }
 header .header-left {
+  margin-top: 15px;
   display: flex;
   align-items: center;
 }
 header .header-left .logo {
-  width: 200px;
+  width: 275px;
+  height: 368px;/*sube el logo*/
 }
 header .header-left nav {
+  margin-top: 34px;
   margin-left: 50px;
 }
 header .header-left nav ul {
@@ -52,9 +76,10 @@ header .header-right {
 header .login-signup {
   color: #cfd9e0;
   font-weight: bold;
-  
+
 }
 header .login-signup a {
+  margin-top: 52px;
   display: inline-block;
   color: #ffffff;
   background: #db8c52;
