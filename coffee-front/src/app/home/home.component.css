@@ -10,7 +10,7 @@
   margin-left: -8px;
 }
 #conten-slide{
-  margin-top: 10px;
+  margin-top: 50px;
 }
 #slider {
   margin: 0 auto;
@@ -163,7 +163,7 @@
   object-fit: cover;
 }
 .barra_superior{
-  margin-top: 15px;
+  margin-top: 100px;
   background: #a66e66;
   justify-content: center;
   text-align: center;
