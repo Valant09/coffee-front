@@ -8,6 +8,8 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import {CarComponent} from "./car/car.component";
+import {authGuard} from "./auth.guard";
+import {SearchBarComponent} from "./search-bar/search-bar.component";
 
 
 const routes: Routes = [
@@ -20,6 +22,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'product-list', component: ProductListComponent},
+  {path: 'search', component: SearchBarComponent,children:[
+    {path: 'products', component: ProductListComponent},
+    {path: 'productos/:id', component: ProductDetailsComponent},
+    {path: 'home', component: HomeComponent},
+  ]},
   { path: 'app', component: AppComponent}
 ];
 

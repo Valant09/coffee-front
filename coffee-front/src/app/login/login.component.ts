@@ -5,6 +5,7 @@ import * as CryptoJS from 'crypto-js';
 import { environment } from '../../environments/environment';
 import { AppComponent } from '../app.component';
 import { NavBarService } from '../services/navigation-bar.service';
+import {SingUp} from '../data_type';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class LoginComponent implements  OnInit {
   }
 
   login(usuario:string,contrasena:string){
+
     if(!usuario || !contrasena){
       alert('Ingrese los datos completos')
     }
@@ -52,7 +54,7 @@ export class LoginComponent implements  OnInit {
           this.userServiceService.setToken(res.token);
           console.log("home!!!");
           console.log(res.token);
-          // this.router.navigate(['home']);
+          this.router.navigate(['home']);
         },
         error => {
           if (error.status === 400) {

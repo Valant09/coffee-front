@@ -1,8 +1,9 @@
+<app-search-bar></app-search-bar>
 <div class="barra_superior">
-  <a href="">¡Descubre el Sabor del Autentico Cafe</a>
+  <a href="">¡Descubre el Sabor del Autentico Cafe!</a>
   <img src="" alt="">
 </div>
-
+<router-outlet></router-outlet>
 <div id="slider">
   <input type="radio" name="slider" id="slide1" checked>
   <input type="radio" name="slider" id="slide2">
@@ -50,18 +51,6 @@
   </div>
 </div>
 
-<div class="wrapper">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-
-  <div class="cuadro">
-    <img src="assets/img/fondo.jpeg" class="imagen">
-    <div class="search-bar">
-      <input type="text" #searchInput (input)="onSearch(searchInput.value)" placeholder="Buscar..." />
-    </div>
-  </div>
-</div>
 <div class="products-grid">
 
   <div class="product">
