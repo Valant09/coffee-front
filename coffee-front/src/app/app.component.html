@@ -1,2 +1,67 @@
 <app-search-bar></app-search-bar>
 
+<<<<<<< Updated upstream
+=======
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header>
+
+
+  <div class="header-left" *ngIf="!hideNavbar">
+    <div class="barra_buscador">
+      <input type="text" #searchInput (input)="onSearch(searchInput.value)" placeholder="Busca cualquier producto de la tienda aqui">
+      <span class="icono-lupa">&#128269;</span>
+    </div>
+    <div class="logo">
+      <img src="assets\img\21.png" alt="Logo" width="300" height="300" class="d-inline-block align-text-top">
+    </div>
+    <nav>
+      <ul>
+
+        <li>
+          <a href="" class="active">Inicio</a>
+        </li>
+        <li>
+          <a [routerLink]="['/product-list']">Productos</a>
+        </li>
+        <li>
+          <a href="">Categorias</a>
+        </li>
+        <li>
+          <a href="">Ayuda</a>
+        </li>
+        <li>
+          <a href="">contacto: coffecabana@coffecaba.com</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-right" *ngIf="!hideNavbar">
+    <div class="login-signup">
+      <a [routerLink]="['/login']">Iniciar sesión </a>
+      <a  (mouseover)="showCartPreview()" (mouseout)="hideCartPreview()" [routerLink]="['/car']">Carrito</a>
+    </div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+<script>
+  hamburger = document.querySelector(".hamburger");
+  nav = document.querySelector("nav");
+  hamburger.onclick = function () {
+    nav.classList.toggle("active");
+  }
+</script>
+</body>
+
+</html>
+<router-outlet></router-outlet>
+>>>>>>> Stashed changes
