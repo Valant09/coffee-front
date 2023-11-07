@@ -49,7 +49,7 @@
                 <div class="modal" *ngIf="showModal">
                   <app-car></app-car>
 
-                  <button (mouseout)="closeCarModal()" class="btn btn-sm btn-success">Cerrar</button>
+                  <button (mouseout)="closeCarModal()" class="btn btn-sm btn-success">Cerrar </button>
                   <button class="btn btn-sm btn-success" [routerLink]="['/car']">Pagar</button>
                 </div>
               <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito</a>
