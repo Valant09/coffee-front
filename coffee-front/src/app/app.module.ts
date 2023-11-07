@@ -20,6 +20,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CarComponent } from './car/car.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,7 @@ import { CarComponent } from './car/car.component';
     MatGridListModule,
     MatCardModule,
     FlexLayoutModule,
-  
+
   ],
   providers: [],
   bootstrap: [AppComponent]
