@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable,BehaviorSubject } from 'rxjs';
 import { environment} from '../../environments/environment';
 
 @Injectable({
@@ -8,7 +8,14 @@ import { environment} from '../../environments/environment';
 })
 export class UserServiceService {
   private url = environment.url;
+  private loggedIn = new BehaviorSubject<boolean>(false);
 
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+  setLoggedIn(value: boolean) {
+    this.loggedIn.next(value);
+  }
   constructor(
     private http:HttpClient
   ) { }
@@ -21,6 +28,17 @@ export class UserServiceService {
   }
   removeToken(){
     return localStorage.removeItem('token')
+  }
+  setUserLoggedIn() {
+    localStorage.setItem('loggedIn', 'true');
+  }
+
+  setUserLoggedOut() {
+    localStorage.removeItem('loggedIn');
+  }
+
+  isUserLoggedIn() {
+    return localStorage.getItem('loggedIn');
   }
 
   public postRequest(body:any):Observable<any>{
@@ -37,6 +55,7 @@ export class UserServiceService {
     console.log(body)
     return this.http.post<any>('http://localhost:3000/users/login', body,{'headers':headers});
   }
+  
 }
 
 

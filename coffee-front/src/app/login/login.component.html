@@ -12,9 +12,9 @@
 
       </div>
       <h1>Iniciar Sesión</h1>
-      <form>
-        <input #usuario type="text" id="usuario" class="fadeIn second custom-text-color " name="usuario" placeholder="Nombre de usuario">
-        <input #contrasena type="password" id="contrasena" class="fadeIn third custom-text-color" name="login" placeholder="Contraseña">
+      <form #sellerSigUp="ngForm">
+        <input #usuario type="text" id="usuario" class="fadeIn second custom-text-color " ngModel name="usuario" placeholder="Nombre de usuario">
+        <input #contrasena type="password" id="contrasena" class="fadeIn third custom-text-color" ngModel name="login" placeholder="Contraseña">
         <button type="button" class="btn btn-primary" (click)="login(usuario.value, contrasena.value)">Iniciar Sesión</button>
       </form>
       <div>
@@ -24,5 +24,4 @@
       </div>
     </div>
   </div>
-
 

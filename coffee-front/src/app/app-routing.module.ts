@@ -15,19 +15,23 @@ import {SearchBarComponent} from "./search-bar/search-bar.component";
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'productos/:id', component: ProductDetailsComponent },
-  {path: 'car', component: CarComponent},
+  { path: 'car', component: CarComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent},
-  { path: 'recover-password', component: RecoverPasswordComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent},
-  { path: 'product-list', component: ProductListComponent},
-  {path: 'search', component: SearchBarComponent,children:[
-    {path: 'products', component: ProductListComponent},
-    {path: 'productos/:id', component: ProductDetailsComponent},
-    {path: 'home', component: HomeComponent},
-  ]},
-  { path: 'app', component: AppComponent}
+  { path: 'register', component: RegisterComponent },
+  { path: 'product-list', component: ProductListComponent },
+  {
+    path: 'search',
+    component: SearchBarComponent,
+    children: [
+      { path: 'products', component: ProductListComponent },
+      { path: 'productos/:id', component: ProductDetailsComponent },
+      { path: 'home', component: HomeComponent },
+    ],
+  },
+  { path: 'app', component: AppComponent },
 ];
 
 @NgModule({

@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit,Output } from '@angular/core';
 import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 import { environment } from '../../environments/environment';
-import { AppComponent } from '../app.component';
-import { NavBarService } from '../services/navigation-bar.service';
-import {SingUp} from '../data_type';
 
 
 @Component({
@@ -14,20 +11,17 @@ import {SingUp} from '../data_type';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements  OnInit {
-
-  hideNavbar = true;
-  todo:any;
+  @Output() userLoggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(
     private userServiceService:UserServiceService,
     private router:Router,
-    private  navBarService: NavBarService
-
+ 
   ) {
-    this.navBarService.setHideNavbar(this.hideNavbar);
+  
   }
 
-
-  ngOnInit() {
+  ngOnInit(){
+  
     console.log('LoginComponent initialized');
   }
 
@@ -49,11 +43,15 @@ export class LoginComponent implements  OnInit {
       this.userServiceService.validateUser({
         usuario: encryptedusuario,
         contrasena: encryptedcontrasena
+
       }).subscribe(
         res => {
           this.userServiceService.setToken(res.token);
+          this.userServiceService.setUserLoggedIn();
           console.log("home!!!");
           console.log(res.token);
+          this.userLoggedIn.emit(true); // Emitir evento de inicio de sesión exitoso
+          this.userServiceService.setLoggedIn(true);
           this.router.navigate(['home']);
         },
         error => {
