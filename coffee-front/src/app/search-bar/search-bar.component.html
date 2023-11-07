@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<router-outlet></router-outlet>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +8,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-left" *ngIf="!hideNavbar">
+    <header *ngIf="showNavigation">
+        <div *ngIf="menuTipe !== 'login'" class="header-left" >
 
           <div class="barra_buscador">
             <input type="text" #searchInput (input)="onSearch(searchInput.value)" placeholder="Busca cualquier producto de la tienda aqui">
@@ -17,8 +18,9 @@
             <div class="logo">
                 <img src="assets\img\21.png" alt="Logo" width="300" height="300" class="d-inline-block align-text-top">
             </div>
+            <div >
             <nav>
-                <ul>
+                <ul >
 
                     <li>
                         <a href="" class="active">Inicio</a>
@@ -37,12 +39,17 @@
                     </li>
                 </ul>
             </nav>
+          </div>
         </div>
-        <div class="header-right" *ngIf="!hideNavbar">
-            <div class="login-signup">
-                <a [routerLink]="['/login']">Iniciar sesión </a>
-                <a href="" [routerLink]="['/car']">Carrito</a>
-            </div>
+        <div class="header-right">
+          <div [ngSwitch]="menuTipe" class="login-signup">
+            <ul>
+              <a *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar sesión</a>
+              <a *ngIf="!loggedIn" [routerLink]="['/car']">Carrito</a>
+              <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito</a>
+              <a *ngIf="loggedIn" href="" (click)="logout()">Cerrar sesión</a>
+            </ul>
+          </div>
             <div class="hamburger">
                 <div></div>
                 <div></div>
@@ -60,6 +67,6 @@
 </body>
 
 </html>
-<router-outlet></router-outlet>
+
 
 

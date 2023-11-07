@@ -36,7 +36,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  background: #ffffff;
+  background: #fff;
   position: fixed; /* Fija la barra de navegación */
   top: 0; /* Asegura que la barra de navegación se mantenga en la parte superior */
   width: 100%; /* Ajusta el ancho para ocupar toda la pantalla */
@@ -153,4 +153,13 @@ header .header-right .hamburger div {
   border-bottom: 2px solid #a66e66; /* Establece el borde inferior con el color especificado */
   color: transparent;
   background-color: transparent;
+}
+.header-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-signup ul {
+  display: flex;
+  justify-content: flex-end;
 }
