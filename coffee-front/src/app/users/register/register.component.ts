@@ -18,7 +18,7 @@ export class RegisterComponent {
   formularioPersona = new FormGroup({
     nombre_usuario: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
     apellido_usuario: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
-    documento_usuario: new FormControl('', [Validators.required, Validators.maxLength(10),Validators.pattern(/^[0-9]+$/)]),
+    documento_usuario: new FormControl(0, [Validators.required, Validators.maxLength(10),Validators.pattern(/^[0-9]+$/)]),
     correo_usuario: new FormControl('', [Validators.required, Validators.maxLength(40)]),
     tipo_documento: new FormControl('CC', [Validators.required, Validators.maxLength(80)]),
     contrasena_usuario: new FormControl('', [Validators.required, Validators.maxLength(15)]),
