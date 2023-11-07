@@ -34,6 +34,7 @@ export class SearchBarComponent implements OnInit{
    logout() {
     this.userServiceService.setUserLoggedOut();
     this.menuTipe="default"
+    this.userServiceService.removeToken();
     this.router.navigate(['/login']);
     console.log('cerro cesion el usuario', this.loggedIn);
     // Aquí también podrías realizar otras acciones necesarias al cerrar sesión
@@ -50,7 +51,7 @@ export class SearchBarComponent implements OnInit{
     this.router.events.subscribe((val:any)=>{
       if(val.url){
         console.warn(val.url)
-        if(val.url.includes('login')){
+        if(val.url.includes('login')|| val.url.includes('register')){
           console.log('in login area')
           this.menuTipe="login"
           this.showNavigation=false;
