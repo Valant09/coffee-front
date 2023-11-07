@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd7207a2-5cac-4bf8-8ebe-4a8157e8d056" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee-front/src/app/car/car.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/car/car.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee-front/src/app/car/car.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/car/car.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-front/src/app/search-bar/search-bar.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +66,7 @@
       <workItem from="1699335599664" duration="4551000" />
       <workItem from="1699340735773" duration="302000" />
       <workItem from="1699341126199" duration="455000" />
+      <workItem from="1699341679989" duration="75000" />
     </task>
     <servers />
   </component>
