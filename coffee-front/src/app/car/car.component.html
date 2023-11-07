@@ -29,32 +29,6 @@
     </tbody>
   </table>
 
-  <!-- Agrega un botón que mostrará la vista previa del carrito al pasar el cursor sobre él -->
-  <button class="btn btn-primary" (mouseover)="showCartPreview()" (mouseout)="hideCartPreview()">Carrito</button>
-
-  <!-- Agrega la vista previa del carrito en un popover -->
-  <div [class.d-none]="!showPreview" class="popover">
-    <div class="popover-header">
-      Carrito de Compras
-    </div>
-    <div class="popover-body">
-      <table class="table">
-        <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Cantidad</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of cartItems">
-          <td>{{ item.product.name }}</td>
-          <td>{{ item.quantity }}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
   <div class="card mt-3">
     <div class="card-body">
       <h5 class="card-title">Resumen de compra</h5>
