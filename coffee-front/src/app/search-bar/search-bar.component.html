@@ -45,7 +45,12 @@
           <div [ngSwitch]="menuTipe" class="login-signup">
             <ul>
               <a *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar sesión</a>
-              <a *ngIf="!loggedIn" [routerLink]="['/car']">Carrito</a>
+              <a (mouseover)="openCarModal()" *ngIf="!loggedIn" [routerLink]="['/car']">Carrito</a>
+                <div class="modal" *ngIf="showModal">
+                  <app-car></app-car>
+                  <button (mouseout)="closeCarModal()" class="btn btn-sm btn-success">Cerrar</button>
+                  <button class="btn btn-sm btn-success" [routerLink]="['/car']">Pagar</button>
+                </div>
               <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito</a>
               <a *ngIf="loggedIn" href="" (click)="logout()">Cerrar sesión</a>
             </ul>

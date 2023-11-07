@@ -10,19 +10,19 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit{
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
-  
+
   menuTipe:string="default";
   loggedIn: boolean = false;
   showNavigation: boolean=false;
   isLoginPage: boolean = false;
- 
+
 
 
 
   constructor(private router:Router,
     private userServiceService:UserServiceService,
     private cdr: ChangeDetectorRef) {
-      
+
     }
 
   onSearch(searchTerm: string) {
@@ -38,7 +38,7 @@ export class SearchBarComponent implements OnInit{
     console.log('cerro cesion el usuario', this.loggedIn);
     // Aquí también podrías realizar otras acciones necesarias al cerrar sesión
   }
-  
+
 
   ngOnInit():void{
     this.userServiceService.isLoggedIn.subscribe(loggedIn => {
@@ -46,7 +46,7 @@ export class SearchBarComponent implements OnInit{
       this.isLoginPage = this.router.url === '/login';
       this.cdr.detectChanges();
     });
-  
+
     this.router.events.subscribe((val:any)=>{
       if(val.url){
         console.warn(val.url)
@@ -63,4 +63,15 @@ export class SearchBarComponent implements OnInit{
     });
     console.log('LoginComponent initialized');
   }
+
+  showModal: boolean = false; // Variable para controlar la ventana modal
+
+  openCarModal() {
+    this.showModal = true;
+  }
+
+  closeCarModal() {
+    this.showModal = false;
+  }
+
 }
