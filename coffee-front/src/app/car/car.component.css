@@ -5,6 +5,22 @@
   background-color: #f8f8f8;
 }
 
+.barra_superior{
+  margin-top: 100px;
+  background: #a66e66;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+  color: #fff;
+}
+
+a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
