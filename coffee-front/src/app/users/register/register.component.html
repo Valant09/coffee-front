@@ -57,7 +57,7 @@
 
                     <div class="input-box">
                         <label for="documento_usuario">Documento de identidad:</label>
-                        <input formControlName="documento_usuario" class="form-control" id="documento_usuario"
+                        <input  type="number" formControlName="documento_usuario" class="form-control" id="documento_usuario"
                             placeholder="Ingrese su documento" pattern="[0-9]*" min="0" />
                         <div *ngIf="formularioPersona.get('documento_usuario')!.hasError('required') && formularioPersona.get('documento_usuario')!.touched" class="error">Documento es requerido y debe ser numérico.</div>
                         <div *ngIf="formularioPersona.get('documento_usuario')!.hasError('pattern')" class="error">
