@@ -5,12 +5,22 @@
   margin: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
+.barra_superior{
+  margin-top: 100px;
+  background: #a66e66;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+  color: #fff;
+}
+.container{
+  margin-top: 10px;
+}
 
 .product-card {
   /* margin: 20px; */
-  width: 250px;
-  height: 500px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   background-color: #f1efee;
   cursor: pointer;
  
@@ -23,6 +33,7 @@
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  object-fit: contain;
 
 }
 
@@ -55,4 +66,11 @@ p {
   color: #1a330c;
   /* Cambia el color según tu preferencia */
   align-content: center;
+}
+
+a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.2s;
+  text-decoration: none;
 }
