@@ -69,4 +69,15 @@ export class SearchBarComponent implements OnInit{
     });
     console.log('LoginComponent initialized');
   }
+
+  showModal: boolean = false; // Variable para controlar la ventana modal
+
+  openCarModal() {
+    this.showModal = true;
+  }
+
+  closeCarModal() {
+    this.showModal = false;
+  }
+
 }

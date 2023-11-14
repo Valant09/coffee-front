@@ -4,6 +4,9 @@
   margin: 10px;
   background-color: #f8f8f8;
 }
+h2{
+  color: #0d0d0d;
+}
 
 .barra_superior{
   margin-top: 100px;
@@ -51,4 +54,7 @@ button {
 .total {
   font-weight: bold;
   text-align: right;
+}
+div{
+  background-color: #cccccc;
 }
