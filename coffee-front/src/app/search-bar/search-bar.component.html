@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header *ngIf="showNavigation">
+    <header *ngIf="showNavigation" >
         <div *ngIf="menuTipe !== 'login'" class="header-left" >
 
           <div class="barra_buscador">
@@ -42,19 +42,28 @@
           </div>
         </div>
         <div class="header-right">
-          <div [ngSwitch]="menuTipe" class="login-signup">
+          <div [ngSwitch]="menuTipe" class="login-signup" (click)="ontoggleViewCard()">
             <ul>
               <a *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar sesión</a>
-              <a *ngIf="!loggedIn" [routerLink]="['/car']">Carrito</a>
-              <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito</a>
+              <p>0</p>
+              <a *ngIf="!loggedIn" >
+              <i class="fa-solid fa-cart-shopping">
+
+              </i>
+              </a>
+              <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito <i class="fa-solid fa-cart-shopping"></i></a>
               <a *ngIf="loggedIn" href="" (click)="logout()">Cerrar sesión</a>
             </ul>
           </div>
+
             <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+        </div>
+        <div class="cart"   [ngClass]="{show: viewCard }">
+          <app-folding-cart></app-folding-cart>
         </div>
     </header>
     <script>

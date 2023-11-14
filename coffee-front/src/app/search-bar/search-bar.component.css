@@ -1,3 +1,5 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
 * {
   padding: 0;
   margin: 0;
@@ -154,6 +156,12 @@ header .header-right .hamburger div {
   color: transparent;
   background-color: transparent;
 }
+
+.fa-duotone.fa-cart-shopping {
+  color: #000000; /* Cambia este color según tus preferencias */
+}
+
+
 .header-right {
   display: flex;
   justify-content: space-between;
@@ -162,4 +170,34 @@ header .header-right .hamburger div {
 .login-signup ul {
   display: flex;
   justify-content: flex-end;
+}
+
+.card_icon{
+  p{
+    background-color: #af510b;
+    font-size: 0.8 rem;
+    margin-top: 10px;
+  }
+}
+
+.cart{
+  display: none;
+}
+.show{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position:absolute;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  right: 0px;
+  top: 83px;
+  min-width: 40%;
+  app-folding-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

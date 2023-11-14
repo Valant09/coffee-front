@@ -18,6 +18,7 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 import { HomeComponent } from './home/home.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CarComponent } from './car/car.component';
+import { FoldingCartComponent } from './folding-cart/folding-cart.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CarComponent } from './car/car.component';
     HomeComponent,
     SearchBarComponent,
     CarComponent,
+    FoldingCartComponent,
 
   ],
   imports: [

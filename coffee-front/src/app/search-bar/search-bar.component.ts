@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
 import { ChangeDetectorRef } from '@angular/core';
 
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -10,19 +11,23 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit{
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
-  
+
   menuTipe:string="default";
   loggedIn: boolean = false;
   showNavigation: boolean=false;
   isLoginPage: boolean = false;
- 
+  viewCard: boolean = false;
 
 
 
   constructor(private router:Router,
     private userServiceService:UserServiceService,
     private cdr: ChangeDetectorRef) {
-      
+
+    }
+
+    ontoggleViewCard() {
+      this.viewCard = !this.viewCard;
     }
 
   onSearch(searchTerm: string) {
@@ -39,7 +44,7 @@ export class SearchBarComponent implements OnInit{
     console.log('cerro cesion el usuario', this.loggedIn);
     // Aquí también podrías realizar otras acciones necesarias al cerrar sesión
   }
-  
+
 
   ngOnInit():void{
     this.userServiceService.isLoggedIn.subscribe(loggedIn => {
@@ -47,7 +52,7 @@ export class SearchBarComponent implements OnInit{
       this.isLoginPage = this.router.url === '/login';
       this.cdr.detectChanges();
     });
-  
+
     this.router.events.subscribe((val:any)=>{
       if(val.url){
         console.warn(val.url)

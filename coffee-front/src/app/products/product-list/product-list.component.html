@@ -9,22 +9,23 @@
   <img src="" alt="">
 </div>
 <body class="container">
-  
+
   <div>
   <mat-grid-list [cols]="getGridColsClass()"[rowHeight]="'1:1'" [gutterSize]="'20px'">
       <mat-grid-tile *ngFor="let producto of productos" class="product-tile">
-        <mat-card class="product-card" (click)="goToDetails(producto.id)"> 
+        <mat-card class="product-card" (click)="goToDetails(producto.id)">
           <img [src]="producto.pathimag" alt="{{ producto.name }}" class="product-image">
           <mat-card-content class ="product-info">
             <h3>{{ "$ " + producto.valorLote.toLocaleString('es-ES') }}</h3>
             <p>{{ producto.nombre_producto}}</p>
             <p>{{ producto.descripcion }}</p>
+            <button class="button">Tu Botón</button>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-</body> 
+</body>
 
 </html>
 

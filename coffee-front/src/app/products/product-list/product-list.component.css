@@ -23,7 +23,7 @@
   height: 100%;
   background-color: #f1efee;
   cursor: pointer;
- 
+
 }
 
 .product-image {
@@ -38,7 +38,7 @@
 }
 
 .product-info {
-  
+
   max-height: 200px;
   overflow: hidden;
   border-top: 1px solid #ccc;
@@ -73,4 +73,17 @@ a {
   font-size: 20px;
   transition: 0.2s;
   text-decoration: none;
+}
+.button{
+  width: 80%;
+  background-color: #db8c52;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+  cursor: pointer;
+  margin-bottom: 5px;
 }
