@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Product } from 'src/app/interfaces/product.interfaces';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class ProductosService {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-  
+
     return this.http.get<any>(`${this.url}/products`, { headers: headers });
   }
 
@@ -26,7 +28,7 @@ export class ProductosService {
     return this.http.get<any>(`${this.url}/products/id`, { headers: headers, params: params });
   }
 
-  
+
 
   crearProducto(producto: any): Observable<any> {
     let headers = new HttpHeaders({
@@ -47,5 +49,16 @@ export class ProductosService {
       'Content-Type': 'application/json'
     });
     return this.http.delete<any>(`${this.url}/productos/${id}`, { headers: headers });
+  }
+
+   //LISTA CARRITO
+   private mylist:Product[] = [];
+   //CARRITO OBSERVABLE
+   private myCart = new BehaviorSubject<Product[]>([]);
+   myCart$ = this.myCart.asObservable();
+
+  addProduct(product: Product) {
+    console.log('llegue al servicio', product);
+    console.log('mylist', this.mylist);
   }
 }

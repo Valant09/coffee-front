@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+
+  
 
   productos!: any[
   ];

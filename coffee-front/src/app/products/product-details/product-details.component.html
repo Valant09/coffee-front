@@ -26,20 +26,20 @@
      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
    </head>
    <body class="wrapper">
-     <div id="product-desc" class="product-container">
+     <div id="product-desc" class="product-container" >
        <div class="product-image">
-         <img [src]="producto.pathimag" alt="{{ producto.nombre_producto }}">
+        <img [src]="producto?.pathimag" alt="{{ producto?.nombre_producto }}">
        </div>
        <div class="product-details">
-         <h1>{{ producto.nombre_producto }}</h1>
-         <p>{{ producto.descripcion }}</p>
-         <h3 class="price">{{ "$ " + producto.valorLote.toLocaleString('es-ES') }}</h3>
-         <div class="cuantity_g">
+        <h1>{{ producto?.nombre_producto }}</h1>
+        <p>{{ producto?.descripcion }}</p>
+        <h3 class="price">{{ "$ " + producto?.valorLote?.toLocaleString('es-ES') }}</h3>
+         <div class="cuantity_g" >
           <p>Cantidad: </p>
-          <input class="cuantity" [defaultValue]="1" type="number" id="numero" name="numero" min="0" max="100" step="1">
+        <input class="cuantity" [(ngModel)]="productoParaCarrito.cantidad" type="number" id="numero" name="numero" min="0" max="100" step="1">
          </div>
          <div class="actions">
-          <button class="add-to-cart">Agregar al carrito</button>
+          <button class="add-to-cart" (click)="addToCart(productoParaCarrito)">Agregar al carrito</button>
          </div>
        </div>
      </div>
