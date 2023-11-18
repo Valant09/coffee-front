@@ -109,4 +109,8 @@ export class ProductosService {
       this.myCart.next(this.mylist);
     }
   }
+  totalProductsInCart() {
+    const total = this.mylist.reduce(function(acc, product) { return acc + Number(product.cantidad); }, 0);
+    return total;
+  }
 }

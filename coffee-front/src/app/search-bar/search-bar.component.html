@@ -45,12 +45,13 @@
           <div [ngSwitch]="menuTipe" class="login-signup" (click)="ontoggleViewCard()">
             <ul>
               <a *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar sesión</a>
-              <p>0</p>
+
               <a *ngIf="!loggedIn" >
               <i class="fa-solid fa-cart-shopping">
 
               </i>
               </a>
+              <p class="numner_total_productos">{{totalProductsInCart()}}</p>
               <a *ngIf="loggedIn" [routerLink]="['/car']">Carrito <i class="fa-solid fa-cart-shopping"></i></a>
               <a *ngIf="loggedIn" href="" (click)="logout()">Cerrar sesión</a>
             </ul>

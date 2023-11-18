@@ -2,6 +2,7 @@ import {Component, EventEmitter, Output,OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class SearchBarComponent implements OnInit{
 
   constructor(private router:Router,
     private userServiceService:UserServiceService,
-    private cdr: ChangeDetectorRef) {
+    private cdr: ChangeDetectorRef,
+    private ProductosService:ProductosService) {
 
     }
 
@@ -79,5 +81,10 @@ export class SearchBarComponent implements OnInit{
   closeCarModal() {
     this.showModal = false;
   }
+  totalProductsInCart() {
+    const unisPorductos= this.ProductosService.totalProductsInCart();
+    return unisPorductos;
 
+    }
 }
+
