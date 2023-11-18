@@ -58,7 +58,9 @@ export class ProductosService {
    myCart$ = this.myCart.asObservable();
 
   addProduct(product: Product) {
+    this.mylist.push(product);
+    this.myCart.next(this.mylist);
     console.log('llegue al servicio', product);
-    console.log('mylist', this.mylist);
+
   }
 }
