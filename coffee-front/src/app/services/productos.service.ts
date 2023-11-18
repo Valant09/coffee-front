@@ -10,7 +10,9 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductosService {
   private url = 'http://localhost:3000'; // Cambia esta URL por la de tu API
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.loadFromLocalStorage();
+  }
 
   getProductos(): Observable<any> {
     let headers = new HttpHeaders({
@@ -57,10 +59,54 @@ export class ProductosService {
    private myCart = new BehaviorSubject<Product[]>([]);
    myCart$ = this.myCart.asObservable();
 
-  addProduct(product: Product) {
-    this.mylist.push(product);
-    this.myCart.next(this.mylist);
-    console.log('llegue al servicio', product);
+   addProduct(product: Product) {
+    if (this.mylist.length === 0) {
+      product.cantidad = 1;
+      this.mylist.push(product);
+      this.myCart.next(this.mylist);
+      console.log('llegue al servicio', product);
+    } else {
+      const repetido = this.mylist.find((element) => {
+        return element.nombre_producto === product.nombre_producto;
+      });
+      if (repetido) {
+        repetido.cantidad = Number(repetido.cantidad) + 1;
+        this.myCart.next(this.mylist);
+      } else {
+        product.cantidad = 1;
+        this.mylist.push(product);
+        this.myCart.next(this.mylist);
+      }
+    }
+    localStorage.setItem('myCart', JSON.stringify(this.mylist)); // Almacenar en local storage
+  }
 
+  deleteProduct(nombre_producto: string) {
+    this.mylist = this.mylist.filter((product) => {
+      return product.nombre_producto != nombre_producto;
+    });
+    this.myCart.next(this.mylist);
+    localStorage.setItem('myCart', JSON.stringify(this.mylist)); // Actualizar local storage
+  }
+
+  finProductByNombre(nombre_producto:string){
+
+    return this.mylist.find((element)=>{
+      return element.nombre_producto === nombre_producto;
+    });
+  }
+
+  totalCart(){
+    const total= this.mylist.reduce(function(acc, product){return acc + Number(product.valorLote * product.cantidad);},0);
+    return total;
+  }
+
+  // Cargar desde local storage al iniciar la aplicación
+  loadFromLocalStorage() {
+    const storedCart = localStorage.getItem('myCart');
+    if (storedCart) {
+      this.mylist = JSON.parse(storedCart);
+      this.myCart.next(this.mylist);
+    }
   }
 }
