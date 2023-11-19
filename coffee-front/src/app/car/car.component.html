@@ -1,63 +1,64 @@
-
-<div class="container mt-4 div">
-
+<html>
+  <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+</head>
 <div class="barra_superior">
   <a href="">¡Descubre el Sabor del Autentico Cafe!</a>
   <img src="" alt="">
 </div>
-<div class="container mt-4">
 
-  <h2>Carrito de Compras</h2>
-  <table class="table">
-    <thead>
+<h2>Carrito de Compras</h2>
+<table class="table">
+  <thead>
     <tr>
       <th>Producto</th>
-      <th>Imagen</th>
       <th>Precio unitario</th>
       <th>Cantidad</th>
       <th>Total</th>
-      <th>Acciones</th>
+      <th>Eliminar</th>
     </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of cartItems">
-      <td>{{ item.product.name }}</td>
-      <td><img src="{{ item.product.image }}" alt="{{ item.product.name }}" style="max-width: 80px; max-height: 80px;"></td>
-      <td>{{ item.product.price | currency }}</td>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of myCart$ | async">
+      <td>{{product.nombre_producto}}</td>
+      <td>{{product.valorLote}}</td>
       <td>
-        <button class="btn btn-sm btn-danger" (click)="decreaseQuantity(item)">-</button>
-        {{ item.quantity }}
-        <button class="btn btn-sm btn-success" (click)="increaseQuantity(item)">+</button>
+        <div class="productCart-buttons-operators">
+          <i  class="fa-solid fa-minus" (click)="updatesUnits('minus',product.nombre_producto)"></i>
+          <span>{{product.cantidad}}</span>
+          <i class="fa-solid fa-plus" (click)="updatesUnits('add',product.nombre_producto)"></i>
+        </div>
       </td>
-      <td>{{ (item.product.price * item.quantity) | currency }}</td>
+      <td>${{totalProduct(product.valorLote,product.cantidad)}}</td>
       <td>
-        <button class="btn btn-sm btn-danger" (click)="removeItem(item)">Eliminar</button>
+        <i class="fa-solid fa-trash" (click)="deleteProduct(product.nombre_producto)"></i>
       </td>
-
     </tr>
-    </tbody>
-  </table>
-  <div class="card mt-3">
-    <div class="card-body">
-      <h5 class="card-title">Resumen de compra</h5>
-      <div class="d-flex justify-content-between">
-        <p>Productos ({{ cartItems.length }})</p>
-        <p>{{ calculateTotal() | currency }}</p>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p>Envío</p>
-        <p>$ 47.600</p>
-      </div>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <h5>Total</h5>
-        <h5>{{ (calculateTotal() + 47600) | currency }}</h5>
-      </div>
-      <div class="text-right mt-3">
-        <button class="btn btn-primary">Continuar compra</button>
-      </div>
+  </tbody>
+</table>
+<div class="card mt-3">
+  <div class="card-body">
+    <h5 class="card-title">Resumen de compra</h5>
+    <div class="d-flex justify-content-between">
+      <p>Productos {{totalProductsInCart()}}</p>
+      <p>{{totalCart()}}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+      <p>Envío</p>
+      <p>$ 47.600</p>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between"*ngFor="let product of myCart$ | async">
+      <h5>Total</h5>
+      <h5>${{totalProduct(product.valorLote,product.cantidad)}}</h5>
+    </div>
+    <div class="text-right mt-3">
+      <button class="btn btn-primary">Continuar compra</button>
     </div>
   </div>
-
-
 </div>
+
+
+

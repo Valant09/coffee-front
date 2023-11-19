@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { environment} from '../../environments/environment';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,20 @@ export class UserServiceService {
     console.log(body)
     return this.http.post<any>('http://localhost:3000/users/login', body,{'headers':headers});
   }
-  
+
+  getTypeUser() {
+    const helper = new JwtHelperService();
+    const token = this.getToken();
+
+    if (token) {
+      const decodedToken = helper.decodeToken(token);
+      const userType = decodedToken.tipo_usuario; // Cambia 'type' al campo específico que deseas obtener
+      return userType;
+    } else {
+      return null; // Manejar el caso en que no haya token
+    }
+  }
+
 }
 
 

@@ -4,8 +4,13 @@
   margin: 10px;
   background-color: #f8f8f8;
 }
-h2{
+h2,thead{
+  margin-top: 30px;
   color: #0d0d0d;
+  text-align: center;
+  font-family: "ubuntu";
+  color: #a66e66;
+
 }
 
 .barra_superior{
@@ -24,37 +29,10 @@ a {
   text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.product {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.product img {
-  max-width: 80px;
-  max-height: 80px;
-  margin-right: 10px;
-}
-
-button {
-  background-color: darkred;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.total {
-  font-weight: bold;
-  text-align: right;
-}
-div{
-  background-color: #cccccc;
+.table{
+  margin-top: 30px;
+  color: #0d0d0d;
+  text-align: center;
+  font-family: "ubuntu";
+  color: #a66e66;
 }

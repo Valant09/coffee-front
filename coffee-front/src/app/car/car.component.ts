@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-car',
@@ -6,30 +7,45 @@ import { Component } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent {
-  cartItems: { product: { name: string; price: number; image: string }; quantity: number }[] = [
-    { product: { name: 'Producto 1', price: 10.99, image: 'product1.jpg' }, quantity: 1 },
-    { product: { name: 'Producto 2', price: 15.99, image: 'product2.jpg' }, quantity: 2 },
-    { product: { name: 'Producto 3', price: 7.99, image: 'product3.jpg' }, quantity: 1 }
-  ];
+  myCart$ = this.ProductosService.myCart$;
 
-  calculateTotal(): number {
-    return this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  constructor(private ProductosService:ProductosService) { }
+
+  ngOnInit(): void {
+  }
+  totalProduct(price:number, units:number){
+    return price * units;
   }
 
-  decreaseQuantity(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
-    if (item.quantity > 1) {
-      item.quantity--;
+  deleteProduct(nombre_producto:string){
+    this.ProductosService.deleteProduct(nombre_producto);
+  }
+  updatesUnits(operation:string, nombre_producto:string){
+    const product = this.ProductosService.finProductByNombre(nombre_producto);
+    if(product){
+      if(operation === 'minus' && product.cantidad >0){
+        product.cantidad = product.cantidad -1;
+      }
+      if(operation === 'add'){
+        product.cantidad = product.cantidad +1;
+      }
+      if(product.cantidad === 0){
+        this.deleteProduct(nombre_producto);
+      }
+
     }
+
   }
 
-  increaseQuantity(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
-    item.quantity++;
+  totalCart(){
+    const result = this.ProductosService.totalCart();
+    return result;
   }
 
-  removeItem(item: { product: { name: string; price: number; image: string }; quantity: number }): void {
-    const index = this.cartItems.indexOf(item);
-    if (index !== -1) {
-      this.cartItems.splice(index, 1);
+  totalProductsInCart() {
+    const unisPorductos= this.ProductosService.totalProductsInCart();
+    return unisPorductos;
+
     }
-  }
+
 }
