@@ -1,1 +1,84 @@
-<p>register-product works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form</title>
+    <link rel="stylesheet" href="register-product.component.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Crear producto</div>
+        <div class="content">
+            <form [formGroup]="formularioProducto" (ngSubmit)="addProducto()" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="nombre_producto">Nombre:</label>
+                        <input formControlName="nombre_producto" class="form-control" id="nombre"
+                            placeholder="Ingrese el nombre del producto" />
+                        <div *ngIf="formularioProducto.get('nombre_producto')!.hasError('required') && formularioProducto.get('nombre_producto')!.touched" class="error">Nombre es requerido.</div>
+                        <div *ngIf="formularioProducto.get('nombre_producto')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo letras y espacios.
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="descripcion">Descripcion:</label>
+                        <input formControlName="descripcion" class="form-control" id="descripcion"
+                            placeholder="Ingrese una breve descripcion del producto" />
+                        <div *ngIf="formularioProducto.get('descripcion')!.hasError('required') && formularioProducto.get('descripcion')!.touched" class="error">Descripcion es requerida.</div>
+                        <div *ngIf="formularioProducto.get('descripcion')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo letras y espacios.
+                        </div>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="descripcion">Categoria:</label>
+                        <input formControlName="categoria" class="form-control" id="categoria"
+                            placeholder="Ingrese la categoria del producto" />
+                        <div *ngIf="formularioProducto.get('categoria')!.hasError('required') && formularioProducto.get('categoria')!.touched" class="error">Categoria es requerida.</div>
+                        <div *ngIf="formularioProducto.get('categoria')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo letras y espacios.
+                        </div>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="valor_lote_producto">Precio de venta:</label>
+                        <input  type="number" formControlName="valor_lote_producto" class="form-control" id="valor_lote_producto"
+                            placeholder="Ingrese el precio de venta" pattern="[0-9]*" min="0" />
+                        <div *ngIf="formularioProducto.get('valor_lote_producto')!.hasError('required') && formularioProducto.get('valor_lote_producto')!.touched" class="error">Valor producto es requerido y debe ser numérico.</div>
+                        <div *ngIf="formularioProducto.get('valor_lote_producto')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo numeros.
+                        </div>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="stock">Cantidad de productos:</label>
+                        <input  type="number" formControlName="stock" class="form-control" id="stock"
+                            placeholder="Ingrese su stock" pattern="[0-9]*" min="0" />
+                        <div *ngIf="formularioProducto.get('stock')!.hasError('required') && formularioProducto.get('stock')!.touched" class="error">Stock es requerido y debe ser numérico.</div>
+                        <div *ngIf="formularioProducto.get('stock')!.hasError('pattern')" class="error">
+                            Caracteres no válidos. Ingresa solo numeros.
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
+                <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
