@@ -23,7 +23,7 @@
   <tbody>
     <tr *ngFor="let product of myCart$ | async">
       <td>{{product.nombre_producto}}</td>
-      <td>{{product.valorLote}}</td>
+      <td>{{product.valorLote | number:'1.0-0'}}</td>
       <td>
         <div class="productCart-buttons-operators">
           <i  class="fa-solid fa-minus" (click)="updatesUnits('minus',product.nombre_producto)"></i>
@@ -31,7 +31,7 @@
           <i class="fa-solid fa-plus" (click)="updatesUnits('add',product.nombre_producto)"></i>
         </div>
       </td>
-      <td>${{totalProduct(product.valorLote,product.cantidad)}}</td>
+      <td>${{totalProduct(product.valorLote,product.cantidad)| number:'1.0-0'}}</td>
       <td>
         <i class="fa-solid fa-trash" (click)="deleteProduct(product.nombre_producto)"></i>
       </td>
@@ -43,7 +43,7 @@
     <h5 class="card-title">Resumen de compra</h5>
     <div class="d-flex justify-content-between">
       <p>Productos {{totalProductsInCart()}}</p>
-      <p>{{totalCart()}}</p>
+      <p>{{totalCart()| number:'1.0-0'}}</p>
     </div>
     <div class="d-flex justify-content-between">
       <p>Envío</p>
@@ -52,7 +52,7 @@
     <hr>
     <div class="d-flex justify-content-between"*ngFor="let product of myCart$ | async">
       <h5>Total</h5>
-      <h5>${{totalProduct(product.valorLote,product.cantidad)}}</h5>
+      <h5>${{totalProduct(product.valorLote,product.cantidad) | number:'1.0-0'}}</h5>
     </div>
     <div class="text-right mt-3">
       <button class="btn btn-primary">Continuar compra</button>
