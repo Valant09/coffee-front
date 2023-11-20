@@ -6,6 +6,30 @@
   align-items: center;
 
 }
+.barra_superior{
+  margin-top: 100px;
+  background: #a66e66;
+  justify-content: center;
+  text-align: center;
+  font-family: "ubuntu";
+}
+a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.product-image {
+
+  max-width: auto;
+  max-height: 500px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  object-fit: contain;
+
+}
 body {
   font-family: sans-serif;
   margin: 0;
@@ -122,12 +146,16 @@ p {
 }
 
 .add-to-cart {
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px;
+  background-color: #db8c52; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 15px 30px; /* Espaciado interno (ajusta según sea necesario) */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 5px; /* Bordes redondeados */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cuantity{
   padding: 10px 20px;
