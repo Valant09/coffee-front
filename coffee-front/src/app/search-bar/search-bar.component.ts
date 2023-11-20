@@ -19,6 +19,7 @@ export class SearchBarComponent implements OnInit{
   isLoginPage: boolean = false;
   viewCard: boolean = false;
   userType: any;
+  nameUser: any;
 
 
 
@@ -54,8 +55,11 @@ export class SearchBarComponent implements OnInit{
       this.loggedIn = loggedIn;
       this.isLoginPage = this.router.url === '/login';
       this.userType = this.userServiceService.getTypeUser();
+      this.nameUser = this.userServiceService.getUserName();
+
       console.log('Usuario logueado:', this.loggedIn);
       console.log('Tipo de usuario:', this.userType);
+      console.log('Nombre de usuario:', this.nameUser);
       this.cdr.detectChanges();
     });
 

@@ -23,7 +23,7 @@
   <tbody>
     <tr *ngFor="let product of myCart$ | async">
       <td>{{product.nombre_producto}}</td>
-      <td>{{product.valorLote}}</td>
+      <td>{{product.valorLote | number:'1.0-0'}}</td>
       <td>
         <div class="productCart-buttons-operators">
           <i  class="fa-solid fa-minus" (click)="updatesUnits('minus',product.nombre_producto)"></i>
@@ -31,7 +31,7 @@
           <i class="fa-solid fa-plus" (click)="updatesUnits('add',product.nombre_producto)"></i>
         </div>
       </td>
-      <td>${{totalProduct(product.valorLote,product.cantidad)}}</td>
+      <td>${{totalProduct(product.valorLote,product.cantidad)| number:'1.0-0'}}</td>
       <td>
         <i class="fa-solid fa-trash" (click)="deleteProduct(product.nombre_producto)"></i>
       </td>
@@ -41,24 +41,71 @@
 <div class="card mt-3">
   <div class="card-body">
     <h5 class="card-title">Resumen de compra</h5>
-    <div class="d-flex justify-content-between">
-      <p>Productos {{totalProductsInCart()}}</p>
-      <p>{{totalCart()}}</p>
+    <div class="d-flex-justify-content-between">
+      <p>Total prodcutos: {{totalProductsInCart()}}</p>
+      <p>{{totalCart()| number:'1.0-0'}}</p>
     </div>
-    <div class="d-flex justify-content-between">
-      <p>Envío</p>
-      <p>$ 47.600</p>
-    </div>
+
     <hr>
-    <div class="d-flex justify-content-between"*ngFor="let product of myCart$ | async">
+    <div class="d-flex-justify-content-between">
       <h5>Total</h5>
-      <h5>${{totalProduct(product.valorLote,product.cantidad)}}</h5>
+      <h5>${{totalCart()| number:'1.0-0'}}</h5>
     </div>
     <div class="text-right mt-3">
-      <button class="btn btn-primary">Continuar compra</button>
+      <button class="btn btn-primary">Finalizar Compra</button>
     </div>
   </div>
 </div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>Acerca de Nosotros</h6>
+        <p class="text-justify">Bienvenido a nuestra tienda en línea, el destino perfecto para los amantes del café que buscan explorar una amplia variedad de productos y sabores excepcionales. En nuestra tienda, nos enorgullece ofrecer una experiencia de compra única, brindándote acceso a productos de café de diversas categorías, todo desde la comodidad de tu hogar.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>CATEGORIAS</h6>
+        <ul class="footer-links">
+          <li><a href="">Molido</a></li>
+          <li><a href="">Grano</a></li>
+          <li><a href="">Tostado Casero</a></li>
+          <li><a href="">Esencias</a></li>
+          <li><a href="">Mezclas Especiales:</a></li>
+          <li><a href="">Tipo de Grano</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>ACCESO RAPIDO</h6>
+        <ul class="footer-links">
+          <li><a href="">Sobre nosotros</a></li>
+          <li><a href="">Contacta con nosotros</a></li>
+          <li><a href="">Contribuir</a></li>
+          <li><a href="">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by coffecabana
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 

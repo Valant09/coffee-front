@@ -12,6 +12,7 @@ img {
   width: 100%;
   margin-top: 5px;
 }
+
 .barra_buscador{
 
   margin-top: 10px;
@@ -74,17 +75,23 @@ nav ul li a.active {
 }
 nav .login-signup {
   display: none;
+  margin-left: -30px;
 }
 header .header-right {
   display: flex;
   align-items: center;
+  margin-left: -30px;
+  text-align: right;
 }
 header .login-signup {
+  margin-left: -20px;
   color: #cfd9e0;
   font-weight: bold;
 
 }
+
 header .login-signup a {
+  margin-left: 0px;/*se mueve a la derecha pero mo mueve el a con el incon del carrito*/
   margin-top: 30px;
   display: inline-block;
   color: #ffffff;
@@ -96,6 +103,7 @@ header .login-signup a {
 }
 header .login-signup a:hover {
   background: #af510b; /* Cambia el color de fondo al pasar el cursor */
+
 }
 
 header .header-right .hamburger {
@@ -228,3 +236,15 @@ header .header-right .hamburger div {
   margin-right: auto;
 }
 
+.footer-section:nth-child(3) a {
+  color: #000 !important;
+}
+
+
+.footer-section:nth-child(4) a {
+  color: #000 !important;
+}
+
+.footer-section:nth-child(2) a {
+  color: #000 !important;
+}
