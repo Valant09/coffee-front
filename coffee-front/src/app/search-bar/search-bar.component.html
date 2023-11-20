@@ -45,14 +45,16 @@
           <div [ngSwitch]="menuTipe" class="login-signup" (click)="ontoggleViewCard()">
             <ul>
               <a *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar sesión</a>
-              <a *ngIf="!loggedIn">
+              <a *ngIf="!loggedIn" class="cart-link">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
+              <a *ngIf="loggedIn" ><i class="fa-regular fa-user"></i> {{nameUser}}</a>
               <p class="numner_total_productos" *ngIf="!loggedIn || (loggedIn && userType === 'C')">{{totalProductsInCart()}}</p>
               <!-- Si el usuario está logueado y es de tipo 'C', muestra el carrito -->
-              <a *ngIf="loggedIn && userType === 'C'" [routerLink]="['/car']">Carrito <i class="fa-solid fa-cart-shopping"></i></a>
+              <a *ngIf="loggedIn && userType === 'C'" > <i class="fa-solid fa-cart-shopping"></i></a>
               <!-- Si el usuario está logueado y es de tipo 'A', muestra el botón para registrar productos -->
               <a *ngIf="loggedIn && userType === 'A'" [routerLink]="['/register-product']">Registrar Productos</a>
+
               <a *ngIf="loggedIn" href="" (click)="logout()">Cerrar sesión</a>
             </ul>
           </div>

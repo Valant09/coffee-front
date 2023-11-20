@@ -69,6 +69,17 @@ export class UserServiceService {
       return null; // Manejar el caso en que no haya token
     }
   }
+  getUserName() {
+    const helper = new JwtHelperService();
+    const token = this.getToken();
+    if (token) {
+      const decodedToken = helper.decodeToken(token);
+      const userType = decodedToken.nombre; // Cambia 'type' al campo específico que deseas obtener
+      return userType;
+    } else {
+      return null; // Manejar el caso en que no haya token
+    }
+  }
 
 }
 
