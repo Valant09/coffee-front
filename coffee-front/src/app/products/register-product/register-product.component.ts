@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router'; 
+import { NgxFileDropEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'app-register-product',
@@ -13,6 +14,7 @@ export class RegisterProductComponent {
   formValid = false;
   res: any;
   productoCreado: boolean = false;
+  public files: NgxFileDropEntry[] = [];
 
   formularioProducto = new FormGroup({
     nombre_producto: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
@@ -39,6 +41,10 @@ export class RegisterProductComponent {
     } else {
       // El formulario no es válido, muestra un mensaje de error o realiza alguna otra acción.
     }
+  }
+
+  onDropFile(files: NgxFileDropEntry[]) {
+    console.log("hoi")
   }
   enviarSolicitud(formData: any) {
     this.productosService.crearProducto(formData)
