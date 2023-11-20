@@ -35,6 +35,10 @@ a {
   text-align: center;
   font-family: "ubuntu";
   color: #a66e66;
+  border: none;
+  width: 70%; /* Ajusta este valor según tus necesidades */
+  margin: auto; /* Centra la tabla en su contenedor */
+  /* El resto de tus estilos */
 }
 
 
@@ -219,3 +223,42 @@ a {
   }
 }
 
+.btn-btn-primary {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.d-flex-justify-content-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo base para el botón */
+.btn-primary {
+  background-color: #db8c52; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 15px 30px; /* Espaciado interno (ajusta según sea necesario) */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 5px; /* Bordes redondeados */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo cuando el cursor está sobre el botón */
+.btn-primary:hover {
+  background-color: #af510b; /* Cambia el color de fondo al pasar sobre el botón */
+}
+
+/* Estilo cuando el botón está presionado (activo) */
+.btn-primary:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño del botón al hacer clic */
+}

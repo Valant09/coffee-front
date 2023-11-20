@@ -41,21 +41,18 @@
 <div class="card mt-3">
   <div class="card-body">
     <h5 class="card-title">Resumen de compra</h5>
-    <div class="d-flex justify-content-between">
-      <p>Productos {{totalProductsInCart()}}</p>
+    <div class="d-flex-justify-content-between">
+      <p>Total prodcutos: {{totalProductsInCart()}}</p>
       <p>{{totalCart()| number:'1.0-0'}}</p>
     </div>
-    <div class="d-flex justify-content-between">
-      <p>Envío</p>
-      <p>$ 47.600</p>
-    </div>
+
     <hr>
-    <div class="d-flex justify-content-between"*ngFor="let product of myCart$ | async">
+    <div class="d-flex-justify-content-between">
       <h5>Total</h5>
-      <h5>${{totalProduct(product.valorLote,product.cantidad) | number:'1.0-0'}}</h5>
+      <h5>${{totalCart()| number:'1.0-0'}}</h5>
     </div>
     <div class="text-right mt-3">
-      <button class="btn btn-primary">Continuar compra</button>
+      <button class="btn btn-primary">Finalizar Compra</button>
     </div>
   </div>
 </div>
