@@ -70,26 +70,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div>
-
-                    <ngx-file-drop (onFileDrop)="onDropFile($event)">
-                        <div ngx-file-drop-content>
-                            Arrastra una imagen aquí
-                        </div>
-                    </ngx-file-drop>
-                </div>
-
-                <!-- <div class="col-md-4 col-lg-5" >
-                    <label for="rostro"> Foto de Estudiante:</label>
-                    <ngx-dropzone (change)="onSelect($event)"  name = rostro  accept="image/*" [multiple]="false" [maxFileSize]="15000000">
-                        <ngx-dropzone-label>Arrastre aca la imagen o haz click aqui </ngx-dropzone-label>
-                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-                            [removable]="true" (removed)="onRemove(f)">
-                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                        </ngx-dropzone-image-preview>
-                    </ngx-dropzone>
-                    </div> -->
 
                 <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
                 <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>

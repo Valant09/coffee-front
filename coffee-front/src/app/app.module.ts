@@ -20,7 +20,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CarComponent } from './car/car.component';
 import { FoldingCartComponent } from './folding-cart/folding-cart.component';
 import { RegisterProductComponent } from './products/register-product/register-product.component';
-import { NgxFileDropModule } from 'ngx-file-drop';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +46,6 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     MatGridListModule,
     MatCardModule,
     FlexLayoutModule,
-    NgxFileDropModule
   
   ],
   providers: [],
