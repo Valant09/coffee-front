@@ -73,11 +73,10 @@
                 
                 <div>
 
-                    <ngx-file-drop (onFileDrop)="onDropFile($event)">
-                        <div ngx-file-drop-content>
-                            Arrastra una imagen aquí
-                        </div>
-                    </ngx-file-drop>
+                    <div class="file-drop-container">
+                        <ngx-file-drop (onFileDrop)="onFileSelected($event)" class="my-ngx-file-drop" dropZoneLabel="Arrastra tus imágenes aquí">
+                        </ngx-file-drop>
+                    </div>
                 </div>
 
                 <!-- <div class="col-md-4 col-lg-5" >
@@ -90,9 +89,6 @@
                         </ngx-dropzone-image-preview>
                     </ngx-dropzone>
                     </div> -->
-
-                <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
-                <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
 
                 <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
                 <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>

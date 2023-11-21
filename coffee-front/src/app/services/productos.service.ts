@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/interfaces/product.interfaces';
 import { BehaviorSubject } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,18 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductosService {
   private url = 'http://localhost:3000'; // Cambia esta URL por la de tu API
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private storage: AngularFireStorage) {
     this.loadFromLocalStorage();
   }
+
+  public tareaCloudStorage(nombreArchivo: string, datos: any) {
+    return this.storage.upload(nombreArchivo, datos);
+  }
+  //Referencia del archivo
+  public referenciaCloudStorage(nombreArchivo: string) {
+    return this.storage.ref(nombreArchivo);
+  }
+
 
   getProductos(search = ""): Observable<any> {
     let headers = new HttpHeaders({

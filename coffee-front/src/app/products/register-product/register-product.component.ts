@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router'; 
-import { NgxFileDropEntry } from 'ngx-file-drop';
+import { NgxFileDropEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'app-register-product',
@@ -45,6 +45,29 @@ export class RegisterProductComponent {
 
   onDropFile(files: NgxFileDropEntry[]) {
     console.log("hoi")
+  }
+
+  onFileSelected(event: any) {
+    console.log(event);
+    if (event instanceof NgxFileDropEntry) {
+      const fileEntry = event.fileEntry as FileSystemFileEntry;
+      fileEntry.file((file: File) => {
+        console.log('Archivo seleccionado:', file);
+        const nombreArchivo = 'nombre_unico_para_el_archivo';
+        this.productosService.tareaCloudStorage(nombreArchivo, file).snapshotChanges().toPromise()
+          .then(() => {
+            return this.productosService.referenciaCloudStorage(nombreArchivo).getDownloadURL().toPromise();
+          })
+          .then(downloadURL => {
+            console.log('URL de descarga:', downloadURL);
+          })
+          .catch(error => {
+            console.error('Error al subir el archivo:', error);
+          });
+      });
+    } else {
+      console.error('No se seleccionó ningún archivo.');
+    }
   }
   enviarSolicitud(formData: any) {
     this.productosService.crearProducto(formData)
