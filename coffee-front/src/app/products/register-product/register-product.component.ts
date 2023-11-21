@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ProductosService } from '../../services/productos.service';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { NgxFileDropEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 
 @Component({
@@ -49,22 +49,20 @@ export class RegisterProductComponent {
 
   onFileSelected(event: any) {
     console.log(event);
-    if (event instanceof NgxFileDropEntry) {
-      const fileEntry = event.fileEntry as FileSystemFileEntry;
-      fileEntry.file((file: File) => {
-        console.log('Archivo seleccionado:', file);
-        const nombreArchivo = 'nombre_unico_para_el_archivo';
-        this.productosService.tareaCloudStorage(nombreArchivo, file).snapshotChanges().toPromise()
-          .then(() => {
-            return this.productosService.referenciaCloudStorage(nombreArchivo).getDownloadURL().toPromise();
-          })
-          .then(downloadURL => {
-            console.log('URL de descarga:', downloadURL);
-          })
-          .catch(error => {
-            console.error('Error al subir el archivo:', error);
-          });
-      });
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      console.log('Archivo seleccionado:', file);
+      const nombreArchivo = 'nombre_unico_para_el_archivo';
+      this.productosService.tareaCloudStorage(nombreArchivo, file).snapshotChanges().toPromise()
+        .then(() => {
+          return this.productosService.referenciaCloudStorage(nombreArchivo).getDownloadURL().toPromise();
+        })
+        .then(downloadURL => {
+          console.log('URL de descarga:', downloadURL);
+        })
+        .catch(error => {
+          console.error('Error al subir el archivo:', error);
+        });
     } else {
       console.error('No se seleccionó ningún archivo.');
     }
@@ -83,7 +81,7 @@ export class RegisterProductComponent {
           console.log('Error al Registrar producto', 'Error de Registro');
         });
   }
-  mostrarAlerta(valido: boolean) { 
+  mostrarAlerta(valido: boolean) {
     if (valido) {
       Swal.fire({
         title: 'Producto registrado',
