@@ -22,6 +22,10 @@ import { FoldingCartComponent } from './folding-cart/folding-cart.component';
 import { RegisterProductComponent } from './products/register-product/register-product.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +38,8 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     CarComponent,
     FoldingCartComponent,
     RegisterProductComponent,
+    
+ 
 
   ],
   imports: [
@@ -46,8 +52,9 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     MatGridListModule,
     MatCardModule,
     FlexLayoutModule,
-    NgxFileDropModule
-  
+    NgxFileDropModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

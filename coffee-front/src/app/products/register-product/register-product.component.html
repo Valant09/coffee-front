@@ -69,17 +69,15 @@
                             Caracteres no válidos. Ingresa solo numeros.
                         </div>
                     </div>
+                    
+                    
                 </div>
                 
-                <div>
-
-                    <ngx-file-drop (onFileDrop)="onDropFile($event)">
-                        <div ngx-file-drop-content>
-                            Arrastra una imagen aquí
-                        </div>
+                
+                <div class="file-drop-container">
+                    <ngx-file-drop (onFileDrop)="onFileSelected($event)" class="my-ngx-file-drop" dropZoneLabel="Arrastra tus imágenes aquí">
                     </ngx-file-drop>
                 </div>
-
                 <!-- <div class="col-md-4 col-lg-5" >
                     <label for="rostro"> Foto de Estudiante:</label>
                     <ngx-dropzone (change)="onSelect($event)"  name = rostro  accept="image/*" [multiple]="false" [maxFileSize]="15000000">
@@ -91,8 +89,12 @@
                     </ngx-dropzone>
                     </div> -->
 
-                <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
-                <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
+                    <div>
+                        <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
+                        <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
+
+                    </div>
+
             </form>
         </div>
     </div>
