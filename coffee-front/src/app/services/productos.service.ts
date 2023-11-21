@@ -49,10 +49,12 @@ export class ProductosService {
 
 
   crearProducto(producto: any): Observable<any> {
+    console.log("llegue al servicio");
+    console.log(producto);
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post<any>(`${this.url}/productos`, producto, { headers: headers });
+    return this.http.post<any>(`${this.url}/products/create`, producto, { headers: headers });
   }
 
   actualizarProducto(id: string, producto: any): Observable<any> {

@@ -63,8 +63,8 @@
                     <div class="input-box">
                         <label for="stock">Cantidad de productos:</label>
                         <input  type="number" formControlName="stock" class="form-control" id="stock"
-                            placeholder="Ingrese su stock" pattern="[0-9]*" min="0" />
-                        <div *ngIf="formularioProducto.get('stock')!.hasError('required') && formularioProducto.get('stock')!.touched" class="error">Stock es requerido y debe ser numérico.</div>
+                            placeholder="Ingrese el numero de productos" pattern="[0-9]*" min="0" />
+                        <div *ngIf="formularioProducto.get('stock')!.hasError('required') && formularioProducto.get('stock')!.touched" class="error">Numero de productos requerido y debe ser numérico.</div>
                         <div *ngIf="formularioProducto.get('stock')!.hasError('pattern')" class="error">
                             Caracteres no válidos. Ingresa solo numeros.
                         </div>
@@ -78,17 +78,6 @@
                         </ngx-file-drop>
                     </div>
                 </div>
-
-                <!-- <div class="col-md-4 col-lg-5" >
-                    <label for="rostro"> Foto de Estudiante:</label>
-                    <ngx-dropzone (change)="onSelect($event)"  name = rostro  accept="image/*" [multiple]="false" [maxFileSize]="15000000">
-                        <ngx-dropzone-label>Arrastre aca la imagen o haz click aqui </ngx-dropzone-label>
-                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-                            [removable]="true" (removed)="onRemove(f)">
-                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                        </ngx-dropzone-image-preview>
-                    </ngx-dropzone>
-                    </div> -->
 
                 <button type="submit" class="big-button" [disabled]="!formularioProducto.valid">Registrar</button>
                 <div *ngIf="formularioProducto.invalid" class="error">Por favor, complete todos los campos requeridos.</div>
