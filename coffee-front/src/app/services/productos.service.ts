@@ -24,12 +24,17 @@ export class ProductosService {
     return this.storage.ref(nombreArchivo);
   }
 
-  getProductos(): Observable<any> {
+  getProductos(search = ""): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
-    return this.http.get<any>(`${this.url}/products`, { headers: headers });
+    let params = new HttpParams();
+    if (search) {
+      params = params.set('search', search);
+    }
+
+    return this.http.get<any>(`${this.url}/products`, { headers: headers, params: params });
   }
 
   getProducto(id: number): Observable<any> {

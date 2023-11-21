@@ -7,6 +7,11 @@
 <div class="barra_superior">
   <a href="">¡Descubre el Sabor del Autentico Cafe!</a>
   <img src="" alt="">
+
+</div>
+<div class="barra_buscador">
+  <input type="text" #searchInput placeholder="Busca cualquier producto de la tienda aqui">
+  <button (click)="getProductos(searchInput.value)" class="buttonSearch">Buscar</button>
 </div>
 <body class="container">
 
