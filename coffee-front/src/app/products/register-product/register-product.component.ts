@@ -16,13 +16,15 @@ export class RegisterProductComponent {
   productoCreado: boolean = false;
   public files: NgxFileDropEntry[] = [];
 
+
   formularioProducto = new FormGroup({
     nombre_producto: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
     descripcion: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
     categoria: new FormControl('', [Validators.required, Validators.maxLength(40)]),
     valor_lote_producto: new FormControl(0, [Validators.required, Validators.maxLength(10), Validators.pattern(/^[0-9]+$/)]),
     stock: new FormControl(0, [Validators.required, Validators.maxLength(10), Validators.pattern(/^[0-9]+$/)]),
-
+    path_imagen: new FormControl('',),
+    estado: new FormControl('A'),
   });
 
   constructor(private productosService: ProductosService, private router: Router) {
@@ -51,12 +53,13 @@ onFileSelected(event: NgxFileDropEntry[]) {
       fileEntry.file((file: File) => {
         const fileName = file.name;
         this.productosService.tareaCloudStorage(fileName, file).then(() => {
-          // File has been uploaded successfully
-          // Now get a reference to the uploaded file
           const ref = this.productosService.referenciaCloudStorage(fileName);
-          // Get the download URL
           ref.getDownloadURL().subscribe(url => {
-            console.log('Download URL:', url);
+            // Use setValue or patchValue to assign the URL to pathImagen
+            this.formularioProducto.patchValue({
+
+              path_imagen: url
+            });
           });
         }).catch((error) => {
           console.error('Error uploading file', error);
@@ -67,8 +70,9 @@ onFileSelected(event: NgxFileDropEntry[]) {
 }
   
   enviarSolicitud(formData: any) {
+    console.log("entre aqui",formData)
     this.productosService.crearProducto(formData)
-      .subscribe((res: any) => {
+         .subscribe(res => {
         this.res = res;
         console.log("Res:", this.res);
 
