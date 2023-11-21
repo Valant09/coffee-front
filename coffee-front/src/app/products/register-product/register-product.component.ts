@@ -43,32 +43,29 @@ export class RegisterProductComponent {
     }
   }
 
-  onDropFile(files: NgxFileDropEntry[]) {
-    console.log("hoi")
-  }
 
-  onFileSelected(event: any) {
-    console.log(event);
-    if (event instanceof NgxFileDropEntry) {
-      const fileEntry = event.fileEntry as FileSystemFileEntry;
+onFileSelected(event: NgxFileDropEntry[]) {
+  for (const droppedFile of event) {
+    if (droppedFile.fileEntry.isFile) {
+      const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
       fileEntry.file((file: File) => {
-        console.log('Archivo seleccionado:', file);
-        const nombreArchivo = 'nombre_unico_para_el_archivo';
-        this.productosService.tareaCloudStorage(nombreArchivo, file).snapshotChanges().toPromise()
-          .then(() => {
-            return this.productosService.referenciaCloudStorage(nombreArchivo).getDownloadURL().toPromise();
-          })
-          .then(downloadURL => {
-            console.log('URL de descarga:', downloadURL);
-          })
-          .catch(error => {
-            console.error('Error al subir el archivo:', error);
+        const fileName = file.name;
+        this.productosService.tareaCloudStorage(fileName, file).then(() => {
+          // File has been uploaded successfully
+          // Now get a reference to the uploaded file
+          const ref = this.productosService.referenciaCloudStorage(fileName);
+          // Get the download URL
+          ref.getDownloadURL().subscribe(url => {
+            console.log('Download URL:', url);
           });
+        }).catch((error) => {
+          console.error('Error uploading file', error);
+        });
       });
-    } else {
-      console.error('No se seleccionó ningún archivo.');
     }
   }
+}
+  
   enviarSolicitud(formData: any) {
     this.productosService.crearProducto(formData)
       .subscribe((res: any) => {
