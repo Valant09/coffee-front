@@ -10,18 +10,16 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent {
 
-  search: string = 'valor de búsqueda inicial'; // Reemplaza 'valor de búsqueda inicial' con el valor que desees
+  
 
   productos!: any[
   ];
 
   constructor(private productosService: ProductosService, private router: Router) { }
 
-  getProductos(search: string) {
-    if (!search) {
-      search = ""; // Si search está vacío, se establece como una cadena vacía
-    }
-    this.productosService.getProductos(search).subscribe(data => {
+  getProductos() {
+
+    this.productosService.getProductos().subscribe(data => {
       this.productos = data;
       console.log(this.productos);
     });
@@ -31,7 +29,8 @@ export class ProductListComponent {
   }
 
   ngOnInit() {
-    this.getProductos(''); // Llama a getProductos con una cadena vacía para obtener todos los productos al inicio
+
+    this.getProductos();
     this.setGridColsClass(); // Configurar la clase inicial al cargar la página
   }
 
@@ -57,6 +56,5 @@ export class ProductListComponent {
   getGridColsClass() {
     return this.gridColsClass;
   }
-
   //Responsive FINAL
 }

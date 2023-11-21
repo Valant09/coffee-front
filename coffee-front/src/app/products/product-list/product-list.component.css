@@ -14,7 +14,7 @@
   color: #fff;
 }
 .container{
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .product-card {
@@ -87,41 +87,6 @@ a {
   cursor: pointer;
   margin-bottom: 5px;
 }
-
-.barra_buscador{
-
-  margin-top: 140px;
-  justify-content: center;
-  text-align: center;
-  font-family: "ubuntu";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  border-bottom: none;
-}
-.barra_buscador input[type="text"] {
-  width: 48%; /* Ajusta el valor del ancho según sea necesario */
-  border: none; /* Elimina todos los bordes */
-  border-bottom: 2px solid #a66e66; /* Establece el borde inferior con el color especificado */
-  outline: none; /* Elimina el contorno cuando el campo de entrada está enfocado */
-  font-family: "ubuntu";
-  text-align: center;
-}
-
-.buttonSearch{
-  border: none;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/2311/2311526.png');
-  background-size: contain; /* Ajusta el tamaño de la imagen para que quepa dentro del botón */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center; /* Alinea la imagen al centro del botón */
-  font-family: "ubuntu";
-  border-bottom: 2px solid #a66e66; /* Establece el borde inferior con el color especificado */
-  color: transparent;
-  background-color: transparent;
-}
-
 /* piede de pagina*/
 
 

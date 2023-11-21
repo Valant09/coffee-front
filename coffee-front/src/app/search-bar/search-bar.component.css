@@ -24,7 +24,6 @@ img {
   left: 0;
   right: 0;
   z-index: 9999;
-  border-bottom: none;
 }
 .barra_buscador input[type="text"] {
   width: 48%; /* Ajusta el valor del ancho según sea necesario */
@@ -32,7 +31,6 @@ img {
   border-bottom: 2px solid #a66e66; /* Establece el borde inferior con el color especificado */
   outline: none; /* Elimina el contorno cuando el campo de entrada está enfocado */
   font-family: "ubuntu";
-  text-align: center;
 }
 
 header {
