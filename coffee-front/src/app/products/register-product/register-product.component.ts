@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router'; 
+import { NgxFileDropEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
+
+
 
 @Component({
   selector: 'app-register-product',
@@ -13,6 +16,7 @@ export class RegisterProductComponent {
   formValid = false;
   res: any;
   productoCreado: boolean = false;
+  
 
   formularioProducto = new FormGroup({
     nombre_producto: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.pattern(/^[A-Za-z\s]+$/)]),
@@ -40,6 +44,31 @@ export class RegisterProductComponent {
       // El formulario no es válido, muestra un mensaje de error o realiza alguna otra acción.
     }
   }
+
+
+  onFileSelected(event: any) {
+    console.log(event);
+    if (event instanceof NgxFileDropEntry) {
+      const fileEntry = event.fileEntry as FileSystemFileEntry;
+      fileEntry.file((file: File) => {
+        console.log('Archivo seleccionado:', file);
+        const nombreArchivo = 'nombre_unico_para_el_archivo';
+        this.productosService.tareaCloudStorage(nombreArchivo, file).snapshotChanges().toPromise()
+          .then(() => {
+            return this.productosService.referenciaCloudStorage(nombreArchivo).getDownloadURL().toPromise();
+          })
+          .then(downloadURL => {
+            console.log('URL de descarga:', downloadURL);
+          })
+          .catch(error => {
+            console.error('Error al subir el archivo:', error);
+          });
+      });
+    } else {
+      console.error('No se seleccionó ningún archivo.');
+    }
+  }
+  
   enviarSolicitud(formData: any) {
     this.productosService.crearProducto(formData)
       .subscribe((res: any) => {
