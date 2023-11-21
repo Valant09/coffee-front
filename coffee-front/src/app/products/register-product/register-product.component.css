@@ -200,34 +200,3 @@
       flex-direction: column;
     }
   }
-
-
-  .file-drop-container {
-    border: 2px hidden #ccc;
-    padding: 10px; /* Ajusta el espacio alrededor del área de suelta */
-    text-align: center;
-    width: 100%; /* Ajusta el ancho del área de suelta según tus necesidades */
-}
-
-.my-ngx-file-drop {
-    border: 2px hidden;
-    text-align: center;
-    color: #ccc;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    height: 150px;
-
-  
-}
-
-.drag-message {
-    font-size: 10px;
-    color: #ffffff;
-}
-
-.my-ngx-file-drop.drag-over {
-  
-    border-color: #ffffff;
-}

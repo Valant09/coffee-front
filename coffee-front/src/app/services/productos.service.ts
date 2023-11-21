@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/interfaces/product.interfaces';
 import { BehaviorSubject } from 'rxjs';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +10,21 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 export class ProductosService {
   private url = 'http://localhost:3000'; // Cambia esta URL por la de tu API
 
-  constructor(private http: HttpClient, private storage: AngularFireStorage) {
+  constructor(private http: HttpClient) {
     this.loadFromLocalStorage();
   }
 
-  public tareaCloudStorage(nombreArchivo: string, datos: any) {
-    return this.storage.upload(nombreArchivo, datos);
-  }
-
-  //Referencia del archivo
-  public referenciaCloudStorage(nombreArchivo: string) {
-    return this.storage.ref(nombreArchivo);
-  }
-
-  getProductos(): Observable<any> {
+  getProductos(search = ""): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
-    return this.http.get<any>(`${this.url}/products`, { headers: headers });
+    let params = new HttpParams();
+    if (search) {
+      params = params.set('search', search);
+    }
+
+    return this.http.get<any>(`${this.url}/products`, { headers: headers, params: params });
   }
 
   getProducto(id: number): Observable<any> {
@@ -41,12 +36,7 @@ export class ProductosService {
   }
 
 
-  uploadFile(file: File) {
-    const formData = new FormData();
-    formData.append('file', file);
-  
-    return this.http.post('URL_DEL_SERVICIO_DE_ALMACENAMIENTO', formData);
-  }
+
   crearProducto(producto: any): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
